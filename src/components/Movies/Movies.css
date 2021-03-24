@@ -1,0 +1,15 @@
+* {
+  /* border: 1px solid red; */
+  margin: 0;
+  padding: 0;
+}
+
+
+.movie-container {
+  height: 80%;
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 10px;
+}

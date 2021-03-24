@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "../Card/Card.js";
+import "./Movies.css";
 
 const Movies = ({ movies }) => {
   const movieList = movies.map((movie) => {
@@ -16,7 +17,7 @@ const Movies = ({ movies }) => {
     );
   });
 
-  return <section>{movieList}</section>;
+  return <section className="movie-container">{movieList}</section>;
 };
 
 export default Movies;
