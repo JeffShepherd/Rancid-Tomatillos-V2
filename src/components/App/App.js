@@ -1,0 +1,23 @@
+import React, { Component } from "react";
+import movieData from "./src/testData.js";
+
+class App extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      movies: [],
+    };
+  }
+
+  render() {
+    return (
+      <main>
+        <Header />
+        <Movies />
+      </main>
+    );
+  }
+}
+
+export default App;
