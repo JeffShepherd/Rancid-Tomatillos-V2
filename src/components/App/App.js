@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import movieData from "./src/testData.js";
+import Header from "./Header/Header.js";
 
 class App extends Component {
   constructor() {
