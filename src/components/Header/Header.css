@@ -1,0 +1,31 @@
+header {
+  height: 7vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 0px;
+}
+
+header > button {
+  border: none;
+  border-bottom: 1px solid black;
+  background-color: hsla(0, 0%, 0%, 0);
+}
+
+@media only screen and (min-width: 768px) {
+  header {
+    font-size: 4vh;
+  }
+
+  header > button {
+    font-size: 2vh;
+  }
+}
+
+@media only screen and (min-width: 1050px) {
+  header {
+    flex-direction: row;
+    padding: 0px 12px;
+  }
+}
