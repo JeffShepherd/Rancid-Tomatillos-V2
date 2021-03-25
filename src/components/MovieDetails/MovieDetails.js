@@ -1,5 +1,6 @@
 import React from "react";
 import "./MovieDetails.css";
+import Description from "../Description/Description.js";
 
 const MovieDetails = (props) => {
   return (
