@@ -3,20 +3,22 @@ import "./MovieDetails.css";
 import Description from "../Description/Description.js";
 import Image from "../Image/Image.js";
 
-const MovieDetails = (props) => {
+const MovieDetails = ({ selectedMovie }) => {
   return (
-    <section>
-      <Image title={props.title} image={props.backdrop_path} />
+    <section className="details-view">
+      <Image title={selectedMovie.title} image={selectedMovie.backdrop_path} />
       <Description
-        overview={props.overview}
-        releaseDate={props.release_date}
-        averageRating={props.average_rating}
-        genre={props.genres}
-        budget={props.budget}
-        revenue={props.revenue}
-        runtime={props.runtime}
-        tagline={props.tagline}
+        tagline={selectedMovie.tagline}
+        averageRating={selectedMovie.average_rating}
+        overview={selectedMovie.overview}
+        genre={selectedMovie.genres}
+        releaseDate={selectedMovie.release_date}
+        runtime={selectedMovie.runtime}
+        budget={selectedMovie.budget}
+        revenue={selectedMovie.revenue}
       />
     </section>
   );
 };
+
+export default MovieDetails;

@@ -1,0 +1,13 @@
+
+.description {
+}
+
+
+
+.description > p {
+  margin: 4% 0px;
+}
+
+.label {
+  font-weight: bold;
+}
