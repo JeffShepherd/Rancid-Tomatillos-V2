@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Header from "../Header/Header.js";
 import Movies from "../Movies/Movies.js";
-import movieData from "../../testData.js";
+import { movieData } from "../../testData.js";
 
 class App extends Component {
   constructor() {
@@ -9,6 +9,7 @@ class App extends Component {
 
     this.state = {
       movies: movieData.movies,
+      selectedMovie: "",
     };
   }
 
@@ -16,6 +17,7 @@ class App extends Component {
     return (
       <main>
         <Header />
+        {/* if(this.state.selectedMovie && <MovieDetails />) */}
         <Movies movies={this.state.movies} />
       </main>
     );
