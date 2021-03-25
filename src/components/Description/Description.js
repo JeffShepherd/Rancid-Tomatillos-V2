@@ -1,4 +1,5 @@
 import React from "react";
+import "./Description.css";
 
 const Description = (props) => {
   const {
@@ -25,3 +26,5 @@ const Description = (props) => {
     </article>
   );
 };
+
+export default Description;
