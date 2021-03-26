@@ -1,0 +1,14 @@
+.details-view {
+  height: 90vh;
+  width: 97%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (min-width: 1050px) {
+  .details-view {
+    flex-direction: row;
+    margin: 0;
+  }
+}

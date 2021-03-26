@@ -1,0 +1,19 @@
+.movie-title {
+  margin-bottom: 7px;
+  text-align: center;
+}
+
+.backdrop-image {
+  height: auto;
+  width: 100%;
+}
+
+.image-container {
+  width: 100%;
+}
+
+@media only screen and (min-width: 1050px) {
+  .image-container {
+    margin-right: 5%;
+  }
+}

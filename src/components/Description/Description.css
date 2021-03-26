@@ -1,0 +1,26 @@
+.description {
+  font-size: 2.5vh;
+}
+
+.description > p {
+  margin: 4% 0px;
+}
+
+.label {
+  font-weight: bold;
+}
+
+@media only screen and (min-width: 768px) {
+  .description {
+    font-size: 2vh;
+  }
+}
+
+@media only screen and (min-width: 1050px) {
+  .description {
+    position: absolute;
+    width: 50%;
+    align-self: flex-end;
+    z-index: 99;
+  }
+}
