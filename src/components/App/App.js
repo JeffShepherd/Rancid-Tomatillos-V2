@@ -18,9 +18,8 @@ class App extends Component {
     return (
       <main>
         <Header />
-        <MovieDetails selectedMovie={this.state.selectedMovie} />
-        {/* if(this.state.selectedMovie && <MovieDetails />) */}
-        {/* <Movies movies={this.state.movies} /> */}
+        {this.state.selectedMovie && <MovieDetails selectedMovie={this.state.selectedMovie} />}
+        {!this.state.selectedMovie && <Movies movies={this.state.movies} /> }
       </main>
     );
   }
