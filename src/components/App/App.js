@@ -17,11 +17,17 @@ class App extends Component {
   componentDidMount() {
     fetch("http://rancid-tomatillos.herokuapp.com/api/v2/movies")
       .then((response) => response.json())
-      .then((movies) => this.setState({ movies: movies.movies }));
+      .then((movies) => this.setState({ movies: movies.movies }))
+      .catch((error) => this.setState({ error: error.message }));
   }
 
-  showMovieDetails = () => {
-    // this.setState({ selectedMovie: selectedMovieDetails.movie });
+  showMovieDetails = (movieID) => {
+    fetch(`http://rancid-tomatillos.herokuapp.com/api/v2/movies/${movieID}`)
+      .then((response) => response.json())
+      .then((selectedMovie) =>
+        this.setState({ selectedMovie: selectedMovie.movie })
+      )
+      .catch((error) => this.setState({ error: error.message }));
   };
 
   returnToHomePage = () => {
