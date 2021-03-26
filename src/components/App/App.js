@@ -10,8 +10,12 @@ class App extends Component {
 
     this.state = {
       movies: movieData.movies,
-      selectedMovie: selectedMovieDetails.movie,
+      selectedMovie: '',
     };
+  }
+
+  showMovieDetails = () => {
+    this.setState({ selectedMovie: selectedMovieDetails.movie });
   }
 
   render() {
@@ -19,7 +23,7 @@ class App extends Component {
       <main>
         <Header />
         {this.state.selectedMovie && <MovieDetails selectedMovie={this.state.selectedMovie} />}
-        {!this.state.selectedMovie && <Movies movies={this.state.movies} /> }
+        {!this.state.selectedMovie && <Movies showMovieDetails={this.showMovieDetails} movies={this.state.movies} /> }
       </main>
     );
   }
