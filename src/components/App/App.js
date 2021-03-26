@@ -18,10 +18,14 @@ class App extends Component {
     this.setState({ selectedMovie: selectedMovieDetails.movie });
   }
 
+  returnToHomePage = () => {
+    this.setState({ selectedMovie: ''});
+  }
+
   render() {
     return (
       <main>
-        <Header />
+        <Header returnToHomePage={this.returnToHomePage}/>
         {this.state.selectedMovie && <MovieDetails selectedMovie={this.state.selectedMovie} />}
         {!this.state.selectedMovie && <Movies showMovieDetails={this.showMovieDetails} movies={this.state.movies} /> }
       </main>

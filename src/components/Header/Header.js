@@ -1,10 +1,10 @@
 import React from "react";
 import "./Header.css";
-const Header = () => {
+const Header = ({ returnToHomePage }) => {
   return (
     <header>
       <p>Rancid Tomatillos</p>
-      <button className="click">Home</button>
+      <button onClick={() => returnToHomePage()} className="click">Home</button>
     </header>
   );
 };
