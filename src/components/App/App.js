@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Header from "../Header/Header.js";
 import Movies from "../Movies/Movies.js";
-import { movieData, selectedMovieDetails } from "../../testData.js";
 import MovieDetails from "../MovieDetails/MovieDetails.js";
 
 class App extends Component {
