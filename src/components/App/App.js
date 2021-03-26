@@ -9,25 +9,38 @@ class App extends Component {
     super();
 
     this.state = {
-      movies: movieData.movies,
-      selectedMovie: '',
+      movies: [],
+      selectedMovie: "",
     };
   }
 
-  showMovieDetails = () => {
-    this.setState({ selectedMovie: selectedMovieDetails.movie });
+  componentDidMount() {
+    fetch("http://rancid-tomatillos.herokuapp.com/api/v2/movies")
+      .then((response) => response.json())
+      .then((movies) => this.setState({ movies: movies.movies }));
   }
 
+  showMovieDetails = () => {
+    // this.setState({ selectedMovie: selectedMovieDetails.movie });
+  };
+
   returnToHomePage = () => {
-    this.setState({ selectedMovie: ''});
-  }
+    this.setState({ selectedMovie: "" });
+  };
 
   render() {
     return (
       <main>
-        <Header returnToHomePage={this.returnToHomePage}/>
-        {this.state.selectedMovie && <MovieDetails selectedMovie={this.state.selectedMovie} />}
-        {!this.state.selectedMovie && <Movies showMovieDetails={this.showMovieDetails} movies={this.state.movies} /> }
+        <Header returnToHomePage={this.returnToHomePage} />
+        {this.state.selectedMovie && (
+          <MovieDetails selectedMovie={this.state.selectedMovie} />
+        )}
+        {!this.state.selectedMovie && (
+          <Movies
+            showMovieDetails={this.showMovieDetails}
+            movies={this.state.movies}
+          />
+        )}
       </main>
     );
   }
