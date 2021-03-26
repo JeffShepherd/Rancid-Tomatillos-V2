@@ -15,3 +15,12 @@
     font-size: 2vh;
   }
 }
+
+@media only screen and (min-width: 1050px) {
+  .description {
+    position: absolute;
+    width: 50%;
+    align-self: flex-end;
+    z-index: 99;
+  }
+}
