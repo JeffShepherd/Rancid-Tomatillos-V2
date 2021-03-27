@@ -21,7 +21,7 @@ class App extends Component {
       .then((response) => response.json())
       .then((movies) => this.setState({ movies: movies.movies, error: "" }))
       .catch((error) =>
-        this.setState({ error: "Sorry, but an error has been encountered. Please try again later"})
+        this.setState({ error: "We're sorry, an error has occurred. Please try again later."})
       );
   }
 
@@ -39,7 +39,7 @@ class App extends Component {
       .then((selectedMovie) =>
         this.setState({ selectedMovie: selectedMovie.movie, error: "" })
       )
-      .catch((error) => console.log("error"));
+      .catch((error) => console.log(error.message));
   };
 
   returnToHomePage = () => {
@@ -50,7 +50,7 @@ class App extends Component {
     return (
       <main>
         <Header returnToHomePage={this.returnToHomePage} />
-        {this.state.error && <h2>{this.state.error}</h2>}
+        {this.state.error && <h2 className="error-message">⚠️ {this.state.error}</h2>}
         {this.state.selectedMovie && (<MovieDetails selectedMovie={this.state.selectedMovie} />)}
         {!this.state.selectedMovie && (<Movies showMovieDetails={this.showMovieDetails} movies={this.state.movies} />)}
       </main>
