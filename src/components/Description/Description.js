@@ -2,16 +2,7 @@ import React from "react";
 import "./Description.css";
 
 const Description = (selectedMovie) => {
-  const {
-    overview,
-    releaseDate,
-    averageRating,
-    genre,
-    budget,
-    revenue,
-    runtime,
-    tagline,
-  } = selectedMovie;
+  const { overview, releaseDate, averageRating, genre, budget, revenue, runtime, tagline } = selectedMovie;
 
   return (
     <article className="description">
