@@ -11,8 +11,7 @@ const Card = ({ id, title, poster_path, release_date, average_rating, showMovieD
     >
       <img className="movie-image" src={poster_path} alt="movie poster"></img>
       <h2>{title}</h2>
-      <p>Avg. Rating: {Math.round(average_rating)} / 10</p>
-      <p>Released: {release_date}</p>
+      <p>Avg. Rating: {Math.round((average_rating / 10) * 100)}%</p>
     </article>
   );
 };
