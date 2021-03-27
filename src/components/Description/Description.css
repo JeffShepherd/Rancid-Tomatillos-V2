@@ -25,9 +25,10 @@
 @media only screen and (min-width: 1050px) {
   .description {
     position: absolute;
-    width: 50%;
+    width: 47%;
     align-self: flex-end;
-    padding-left: 1%;
+    padding: 0 0 2% 4%;
+    color: white;
     z-index: 99;
   }
 
@@ -39,5 +40,6 @@
 
   .movie-title {
     font-size: 5vh;
+    text-align: left;
   }
 }

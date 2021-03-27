@@ -7,6 +7,7 @@ const MovieDetails = ({ selectedMovie }) => {
   return (
     <section className="details-view">
       <Image image={selectedMovie.backdrop_path} />
+      <div className="overlay"></div>
       <Description
         title={selectedMovie.title} 
         tagline={selectedMovie.tagline}
