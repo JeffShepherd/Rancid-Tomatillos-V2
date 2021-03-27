@@ -10,7 +10,7 @@ class App extends Component {
     this.state = {
       movies: [],
       selectedMovie: "",
-      error: "",
+      error: ""
     };
   }
 
@@ -19,20 +19,16 @@ class App extends Component {
       .then((response) => response.json())
       .then((movies) => this.setState({ movies: movies.movies, error: "" }))
       .catch((error) =>
-        this.setState({
-          error:
-            "Sorry, but an error has been encountered. Please try again later",
-        })
+        this.setState({ error: "Sorry, but an error has been encountered. Please try again later"})
       );
   }
 
   showMovieDetails = (movieID) => {
-    fetch(`http://rancid-tomatillos.herokuapp.com/api/v2/movies/12`)
+    fetch(`http://rancid-tomatillos.herokuapp.com/api/v2/movies/${movieID}`)
       .then((response) => {
         if (!response.ok) {
           this.setState({
-            error:
-              "Details for this movie are not available at this time. Please check back later.",
+            error: "Details for this movie are not available at this time. Please check back later."
           });
         } else {
           return response.json();
@@ -53,15 +49,8 @@ class App extends Component {
       <main>
         <Header returnToHomePage={this.returnToHomePage} />
         {this.state.error && <h2>{this.state.error}</h2>}
-        {this.state.selectedMovie && (
-          <MovieDetails selectedMovie={this.state.selectedMovie} />
-        )}
-        {!this.state.selectedMovie && (
-          <Movies
-            showMovieDetails={this.showMovieDetails}
-            movies={this.state.movies}
-          />
-        )}
+        {this.state.selectedMovie && (<MovieDetails selectedMovie={this.state.selectedMovie} />)}
+        {!this.state.selectedMovie && (<Movies showMovieDetails={this.showMovieDetails} movies={this.state.movies} />)}
       </main>
     );
   }

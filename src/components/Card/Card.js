@@ -1,14 +1,7 @@
 import React from "react";
 import "./Card.css";
 
-const Card = ({
-  id,
-  title,
-  poster_path,
-  release_date,
-  average_rating,
-  showMovieDetails,
-}) => {
+const Card = ({ id, title, poster_path, release_date, average_rating, showMovieDetails}) => {
   return (
     <article
       onClick={(event) => showMovieDetails(event.currentTarget.id)}
