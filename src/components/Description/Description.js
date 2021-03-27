@@ -2,12 +2,15 @@ import React from "react";
 import "./Description.css";
 
 const Description = (selectedMovie) => {
-  const { overview, releaseDate, averageRating, genre, budget, revenue, runtime, tagline } = selectedMovie;
+  const { title, overview, releaseDate, averageRating, genre, budget, revenue, runtime, tagline } = selectedMovie;
 
   return (
     <article className="description">
-      <p><em>{tagline}</em></p>
-      <p><span className="label">Avg. Rating:</span> {averageRating}</p>
+      <div className="movie-header">
+        <h2 className="movie-title">{title}</h2>
+        <aside><em>{tagline}</em></aside>
+      </div>
+      <p><span className="label">Freshness:</span> {Math.round((averageRating / 10) * 100)}%</p>
       <div className="">
         <p className="label">Overview:</p>
         <p>{overview}</p>
