@@ -9,7 +9,7 @@ const Card = ({ id, title, poster_path, release_date, average_rating, showMovieD
       key={id}
       id={id}
     >
-      <img className="movie-image" src={poster_path}></img>
+      <img className="movie-image" src={poster_path} alt="movie poster"></img>
       <h2>{title}</h2>
       <p>Avg. Rating: {Math.round(average_rating)} / 10</p>
       <p>Released: {release_date}</p>
