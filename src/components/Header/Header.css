@@ -8,12 +8,12 @@ header {
   justify-content: space-between;
   background-color: black;
   color: white;
-  border-bottom: 4px solid rgba(51, 107, 51, 0.808);
+  border-bottom: 4px solid rgba(84,90,17, 0.808);
   padding: 6px 0px;
   /* font-family: 'Architects Daughter', cursive; */
 }
 
-header > p {
+div > p {
   font-family: "Architects Daughter", cursive;
 }
 
@@ -38,5 +38,18 @@ header > button {
   header {
     flex-direction: row;
     padding: 0px 12px;
+  }
+
+  .logo-name {
+    display: flex;
+  }
+
+  .logo-name > p {
+    margin-top: auto;
+  }
+
+  .logo-name > img {
+    height: 5rem;
+    width: 5rem;
   }
 }
