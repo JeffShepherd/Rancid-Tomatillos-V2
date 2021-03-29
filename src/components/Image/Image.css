@@ -1,10 +1,5 @@
-.movie-title {
-  margin-bottom: 7px;
-  text-align: center;
-}
-
 .backdrop-image {
-  height: auto;
+  height: 100%;
   width: 100%;
 }
 
@@ -14,6 +9,8 @@
 
 @media only screen and (min-width: 1050px) {
   .image-container {
-    margin-right: 5%;
+    /* margin-right: 5%; */
+    /* position: relative; */
+    object-fit: cover;
   }
 }

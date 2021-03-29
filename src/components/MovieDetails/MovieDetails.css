@@ -8,7 +8,19 @@
 
 @media only screen and (min-width: 1050px) {
   .details-view {
+    height: 95vh;
+    width: 100%;
     flex-direction: row;
-    margin: 0;
+  }
+
+  .overlay {
+    height: 95vh;
+    width: 100%;
+    position: absolute;
+    background: linear-gradient(
+      60deg,
+      rgba(2, 0, 0, 0.68) 25%,
+      rgba(255, 255, 255, 0) 100%
+    );
   }
 }

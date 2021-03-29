@@ -5,11 +5,13 @@
 }
 
 .movie-container {
-  width: 97%;
+  width: 95%;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
   margin-top: 10px;
+  background: transparent;
+  color: white;
 }
 
 .click {

@@ -6,8 +6,10 @@ import Image from "../Image/Image.js";
 const MovieDetails = ({ selectedMovie }) => {
   return (
     <section className="details-view">
-      <Image title={selectedMovie.title} image={selectedMovie.backdrop_path} />
+      <Image image={selectedMovie.backdrop_path} />
+      <div className="overlay"></div>
       <Description
+        title={selectedMovie.title} 
         tagline={selectedMovie.tagline}
         averageRating={selectedMovie.average_rating}
         overview={selectedMovie.overview}

@@ -1,5 +1,6 @@
 .description {
   font-size: 2.5vh;
+  color: white;
 }
 
 .description > p {
@@ -8,6 +9,12 @@
 
 .label {
   font-weight: bold;
+}
+
+.movie-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 @media only screen and (min-width: 768px) {
@@ -19,8 +26,21 @@
 @media only screen and (min-width: 1050px) {
   .description {
     position: absolute;
-    width: 50%;
+    width: 47%;
     align-self: flex-end;
+    padding: 0 0 2% 2.5%;
+    color: white;
     z-index: 99;
+  }
+
+  .movie-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .movie-title {
+    font-size: 5vh;
+    text-align: left;
   }
 }
