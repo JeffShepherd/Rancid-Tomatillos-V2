@@ -26,29 +26,6 @@ class App extends Component {
       );
   }
 
-  // showMovieDetails = (movieID) => {
-  //   fetch(`http://rancid-tomatillos.herokuapp.com/api/v2/movies/${movieID}`)
-  //     .then((response) => {
-  //       if (!response.ok) {
-  //         this.setState({
-  //           error: "Details for this movie are not available at this time. Please check back later."
-  //         });
-  //       } else {
-  //         return response.json();
-  //       }
-  //     })
-  //     .then((selectedMovie) =>
-  //       this.setState({ selectedMovie: selectedMovie.movie, error: "" })
-  //     )
-  //     .catch((err) => this.setState({
-  //       error: "Details for this movie are not available at this time. Please check back later."
-  //     }));
-  // };
-
-  returnToHomePage = () => {
-    this.setState({ selectedMovie: "", error: "" });
-  };
-
   render() {
     return (
       <main>
@@ -56,13 +33,13 @@ class App extends Component {
         {this.state.error && <h2 className="error-message">⚠️ {this.state.error}</h2>}
 
         <Route exact path="/" render={() => <Movies showMovieDetails={this.showMovieDetails} movies={this.state.movies} />} />
+
         <Route exact path='/:movieID' render={({ match }) => {
             const { movieID } = match.params;
-              return <MovieDetails id={ movieID } />
-          }
+            return <MovieDetails id={ movieID } />
+            }
           }
         />
-        
       </main>
     );
   }

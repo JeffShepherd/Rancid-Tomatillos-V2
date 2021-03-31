@@ -8,21 +8,35 @@ class MovieDetails extends Component {
     super()
 
     this.state = {
-      selectedMovie: ''
+      selectedMovie: '',
+      error: ''
     }
   }
 
 componentDidMount() {
-  console.log(this.props.id)
   fetch(`http://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.props.id}`)
-    .then((response) => response.json())
-    .then((selectedMovie) => 
-      this.setState({selectedMovie: selectedMovie.movie}))
+    .then((response) => {
+      if (!response.ok) {
+        this.setState({
+          error: "Details for this movie are not available at this time. Please check back later."
+        });
+      } else {
+        return response.json();
+      }
+    })
+    .then((selectedMovie) =>
+      this.setState({ selectedMovie: selectedMovie.movie, error: "" })
+    )
+    .catch((err) => this.setState({
+      error: "Details for this movie are not available at this time. Please check back later."
+    }));
 }
+
 
   render() {
     return (
       <>
+      {this.state.error && <h2 className="error-message">⚠️ {this.state.error}</h2>}
       {this.state.selectedMovie && 
         <section className="details-view">
           <Image image={this.state.selectedMovie.backdrop_path} />
@@ -47,33 +61,4 @@ componentDidMount() {
 }
 
 
-
-
 export default MovieDetails;
-
-// import React from "react";
-// import "./MovieDetails.css";
-// import Description from "../Description/Description.js";
-// import Image from "../Image/Image.js";
-
-// const MovieDetails = ({ selectedMovie }) => {
-//   return (
-//     <section className="details-view">
-//       <Image image={selectedMovie.backdrop_path} />
-//       <div className="overlay"></div>
-//       <Description
-//         title={selectedMovie.title} 
-//         tagline={selectedMovie.tagline}
-//         averageRating={selectedMovie.average_rating}
-//         overview={selectedMovie.overview}
-//         genre={selectedMovie.genres}
-//         releaseDate={selectedMovie.release_date}
-//         runtime={selectedMovie.runtime}
-//         budget={selectedMovie.budget}
-//         revenue={selectedMovie.revenue}
-//       />
-//     </section>
-//   );
-// };
-
-// export default MovieDetails;
