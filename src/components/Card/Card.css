@@ -1,4 +1,6 @@
-
+a {
+  text-decoration: none;
+}
 
 .movie-card {
   height: 80%;
@@ -23,6 +25,7 @@
 
 .card-text {
   padding: 0.5rem;
+  color: white;
 }
 
 @media only screen and (min-width: 768px) {
