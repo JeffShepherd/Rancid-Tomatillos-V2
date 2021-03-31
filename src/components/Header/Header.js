@@ -1,5 +1,6 @@
 import React from "react";
 import "./Header.css";
+import { Link } from 'react-router-dom'
 
 const Header = ({ returnToHomePage }) => {
   return (
@@ -8,7 +9,7 @@ const Header = ({ returnToHomePage }) => {
         <img src='./assets/tomatillo.png' alt='tomatillo' />
         <p>Rancid Tomatillos</p>
       </div>
-      <button onClick={() => returnToHomePage()} className="click">Home</button>
+      <Link to={`/`} className="home-button click">Home</Link>
     </header>
   );
 };
