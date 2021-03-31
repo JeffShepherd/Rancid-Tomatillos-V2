@@ -19,7 +19,7 @@ describe('Rancid Tomatillos', () => {
   })
 
 
-  it.only('should reveal a selected movie\'s details when clicked', () => {
+  it('should reveal a selected movie\'s details when clicked', () => {
     cy.get('a[id=337401]').click()
     cy.get('.image-container')
       .find('img')
