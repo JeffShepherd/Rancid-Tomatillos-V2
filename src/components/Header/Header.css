@@ -17,7 +17,7 @@ div > p {
   font-family: "Architects Daughter", cursive;
 }
 
-header > button {
+.home-button {
   border: none;
   border-bottom: 1px solid white;
   background-color: hsla(0, 0%, 0%, 0);
@@ -38,7 +38,7 @@ header > button {
   margin: auto;
 }
 
-header > button:hover {
+.home-button:hover {
   /* color: #cccc99; */
   border: 1px solid white;
   border-radius: 3px;
@@ -50,7 +50,7 @@ header > button:hover {
     font-size: 4vh;
   }
 
-  header > button {
+  .home-button {
     font-size: 2vh;
   }
 
