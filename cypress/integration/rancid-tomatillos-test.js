@@ -22,7 +22,16 @@ describe('Rancid Tomatillos', () => {
     cy.get('a[id=337401]').click()
     cy.get('.home-button').click()
     .url().should('eq', 'http://localhost:3000/');
-  });  
+  });
+
+  it('should be able to navigate back and forth with browser arrows', () => {
+    cy.get('a[id=337401]').click()
+    cy.get('.home-button').click()
+    cy.go('back')
+    .url().should('include', '/337401')
+    .go('forward')
+    .url().should('eq', 'http://localhost:3000/')
+  })
 })
 
 describe('App Sad Paths', () => {

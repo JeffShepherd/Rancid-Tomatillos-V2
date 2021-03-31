@@ -2,11 +2,11 @@ User flows to test:
 
 [x] As a user, when I visit the app, all movies should be displayed
 [x] As a user, I can click a movie and see that movie's details
-[ ] When a movie's details are displayed, none of the other movies are visible
-[ ] When a movie's details are displayed, the user should have a way to return to the main view of all movies
-[ ] When the server returns a 500 error, the user will see proper handling
-[ ] As a user, when I click on a movie, provided the details page is rendered, the URL updates to reflect that movie's unique ID as well
-[ ] As a user, I can click the browser's back and forth arrows to navigate through the app
+[x] When a movie's details are displayed, none of the other movies are visible
+[x] When a movie's details are displayed, the user should have a way to return to the main view of all movies
+[x] When the server returns an error, the user will see proper handling
+[x] As a user, when I click on a movie, provided the details page is rendered, the URL updates to reflect that movie's unique ID as well
+[x] As a user, I can click the browser's back and forth arrows to navigate through the app
 
 Questions from 3/31 Cypress lesson:
 + What is the point of intercepting, besides enforcing a failstate, or posting
