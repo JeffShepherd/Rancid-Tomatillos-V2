@@ -10,7 +10,6 @@ const Header = ({ returnToHomePage }) => {
         <p>Rancid Tomatillos</p>
       </div>
       <Link to={`/`} className="home-button click">Home</Link>
-      {/* <button onClick={() => returnToHomePage()} className="click">Home</button> */}
     </header>
   );
 };
