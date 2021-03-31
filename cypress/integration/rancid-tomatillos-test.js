@@ -9,7 +9,13 @@ describe('Rancid Tomatillos', () => {
 
   it('should reveal a selected movie\'s details when clicked', () => {
     cy.get('a[id=337401]').click()
+    cy.contains('51%')
     cy.contains('When the Emperor')
+    cy.contains('Action')
+    cy.contains('2020-09-04')
+    cy.contains('115 mins.')
+    cy.contains('$200.00 m.')
+    cy.contains('$57.00 m.')
   });
 
   it('should hide the application\'s home view when a movie\'s details are displayed', () => {
@@ -31,7 +37,7 @@ describe('Rancid Tomatillos', () => {
     .url().should('include', '/337401')
     .go('forward')
     .url().should('eq', 'http://localhost:3000/')
-  })
+  });
 })
 
 describe('App Sad Paths', () => {
