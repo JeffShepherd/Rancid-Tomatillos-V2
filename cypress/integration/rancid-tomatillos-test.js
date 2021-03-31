@@ -1,14 +1,30 @@
 describe('Rancid Tomatillos', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:3000/');
+    cy.visit('http://localhost:3000/')
   });
 
   it('should display all movies on load', () => {
     cy.get('section').children().should('have.length', 40)
   });
 
-  it('should reveal a selected movie\'s details when clicked', () => {
+  it('should display a movie\'s poster, title, and its freshness rating on home page', () => {
+    cy.get('a[id=337401]')
+      .find('img')
+      .should('have.attr', 'src')
+      .should('include', 'https://image.tmdb.org/t/p/original//aKx1ARwG55zZ0GpRvU2WrGrCG9o.jpg')
+    cy.get('a[id=337401]')
+      .contains('Mulan')
+    cy.get('a[id=337401]')
+      .contains('51%')
+  })
+
+
+  it.only('should reveal a selected movie\'s details when clicked', () => {
     cy.get('a[id=337401]').click()
+    cy.get('.image-container')
+      .find('img')
+      .should('have.attr', 'src')
+      .should('include','https://image.tmdb.org/t/p/original//zzWGRw277MNoCs3zhyG3YmYQsXv.jpg')
     cy.contains('51%')
     cy.contains('When the Emperor')
     cy.contains('Action')
@@ -20,23 +36,23 @@ describe('Rancid Tomatillos', () => {
 
   it('should hide the application\'s home view when a movie\'s details are displayed', () => {
     cy.get('a[id=337401]').click()
-    .url().should('include', '/337401')
-    .get('section[class=movie-container]').should('not.exist')
+      .url().should('include', '/337401')
+      .get('section[class=movie-container]').should('not.exist')
   });
 
   it('should hide the applications\'s details view when the user returns to the home page', () => {
     cy.get('a[id=337401]').click()
     cy.get('.home-button').click()
-    .url().should('eq', 'http://localhost:3000/');
+      .url().should('eq', 'http://localhost:3000/')
   });
 
   it('should be able to navigate back and forth with browser arrows', () => {
     cy.get('a[id=337401]').click()
     cy.get('.home-button').click()
     cy.go('back')
-    .url().should('include', '/337401')
-    .go('forward')
-    .url().should('eq', 'http://localhost:3000/')
+      .url().should('include', '/337401')
+      .go('forward')
+      .url().should('eq', 'http://localhost:3000/')
   });
 })
 
@@ -49,6 +65,7 @@ describe('App Sad Paths', () => {
     {
       statusCode: 404
     })
+    
     cy.visit('http://localhost:3000/')
     cy.get('h2[class=error-message]').should('contain', 'We\'re sorry, an error has occurred. Please try again later.')
   });
@@ -61,6 +78,7 @@ describe('App Sad Paths', () => {
     {
       statusCode: 500
     })
+
     cy.visit('http://localhost:3000/')
     cy.get('h2[class=error-message]').should('contain', 'We\'re sorry, an error has occurred. Please try again later.')
   });
@@ -73,6 +91,7 @@ describe('App Sad Paths', () => {
     {
       statusCode: 404
     })
+
     cy.visit('http://localhost:3000/337401')
     cy.get('h2[class=error-message]').should('contain', 'Details for this movie are not available at this time. Please check back later.')
   });
@@ -85,6 +104,7 @@ describe('App Sad Paths', () => {
     {
       statusCode: 500
     })
+
     cy.visit('http://localhost:3000/337401')
     cy.get('h2[class=error-message]').should('contain', 'Details for this movie are not available at this time. Please check back later.')
   });
