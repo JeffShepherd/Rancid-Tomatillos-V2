@@ -14,14 +14,14 @@ describe('Rancid Tomatillos', () => {
 
   it('should hide the application\'s home view when a movie\'s details are displayed', () => {
     cy.get('a[id=337401]').click()
-    cy.get('section[class=movie-container]').should('not.exist')
+    .url().should('include', '/337401')
+    .get('section[class=movie-container]').should('not.exist')
   });
 
-  it.skip('should hide the applications\'s details view when the user returns to the home page', () => {
+  it('should hide the applications\'s details view when the user returns to the home page', () => {
     cy.get('a[id=337401]').click()
-    cy.get('button').click()
-    cy.get('article[class=description]').should('not.exist');
-  //**TEST FAILING DUE TO ASYNC NATURE, CONSIDER RE-WRITING W/ ROUTER**
+    cy.get('.home-button').click()
+    .url().should('eq', 'http://localhost:3000/');
   });  
 })
 
