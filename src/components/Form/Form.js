@@ -7,7 +7,8 @@ class Form extends Component {
   constructor() {
     super();
     this.state = {
-      searchInput: ''
+      searchInput: '',
+      sortInput: ''
     }
   }
 
@@ -23,6 +24,7 @@ class Form extends Component {
 
   clearInputs() {
     this.setState({ searchInput: ''});
+    this.setState({ sortInput: '' });
   }
 
   render() {
@@ -38,12 +40,11 @@ class Form extends Component {
           <button className="search-button click" onClick={(event) => this.submitSearch(event)}>🔍</button>
         </form>
        <form className="sort-form">
-         <label for="sortFormInput">Sort by: </label>
-         <select id="sortFormInput" name="sort">
-           <option value="" selected></option>
-           <option value="average_rating">Freshness</option>
-           <option value="title">Title</option>
-           <option value="release_date">Release Date</option>
+         <label htmlFor="sortFormInput">Sort by: </label>
+         <select onChange={(event) => this.props.handleSortTypes(event.target.value)} id="sortFormInput" name="sort">
+           <option value="" defaultValue></option>
+           <option value="Freshness">Freshness</option>
+           <option value="Title">Title</option>
          </select>
        </form>
      </>
