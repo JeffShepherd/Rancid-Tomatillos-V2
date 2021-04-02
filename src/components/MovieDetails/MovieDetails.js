@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import "./MovieDetails.css";
 import Description from "../Description/Description.js";
 import Image from "../Image/Image.js";
+import { scrubDetailsData } from "../utilities.js";
+
 
 class MovieDetails extends Component {
   constructor() {
@@ -25,7 +27,7 @@ componentDidMount() {
       }
     })
     .then((selectedMovie) =>
-      this.setState({ selectedMovie: selectedMovie.movie, error: "" })
+      this.setState({ selectedMovie: scrubDetailsData(selectedMovie.movie), error: "" })
     )
     .catch((err) => this.setState({
       error: "Details for this movie are not available at this time. Please check back later."

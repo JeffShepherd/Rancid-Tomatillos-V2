@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Header from "../Header/Header.js";
 import Movies from "../Movies/Movies.js";
 import MovieDetails from "../MovieDetails/MovieDetails.js";
+import { scrubMovieData } from "../utilities.js";
 import { Route } from 'react-router-dom'
 import "./App.css";
 
@@ -20,7 +21,7 @@ class App extends Component {
   componentDidMount() {
     fetch("http://rancid-tomatillos.herokuapp.com/api/v2/movies")
       .then((response) => response.json())
-      .then((movies) => this.setState({ movies: movies.movies, error: "" }))
+      .then((movies) => this.setState({ movies: scrubMovieData(movies.movies), error: "" }))
       .catch((error) =>
         this.setState({ error: "We're sorry, an error has occurred. Please try again later."})
       );
