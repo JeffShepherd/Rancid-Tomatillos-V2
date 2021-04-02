@@ -27,15 +27,26 @@ class Form extends Component {
 
   render() {
     return (
-      <form>
-        <input 
-        onChange={(event) => this.handleChange(event)} 
-        placeholder='Search movies by title' type='search'
-        value={this.state.searchInput}
-        required
-        />
-        <button className="search-button click" onClick={(event) => this.submitSearch(event)}>🔍</button>
-      </form>
+     <>
+        <form className="search-form">
+          <input 
+          onChange={(event) => this.handleChange(event)} 
+          placeholder='Search movies by title' type='search'
+          value={this.state.searchInput}
+          required
+          />
+          <button className="search-button click" onClick={(event) => this.submitSearch(event)}>🔍</button>
+        </form>
+       <form className="sort-form">
+         <label for="sortFormInput">Sort by: </label>
+         <select id="sortFormInput" name="sort">
+           <option value="" selected></option>
+           <option value="average_rating">Freshness</option>
+           <option value="title">Title</option>
+           <option value="release_date">Release Date</option>
+         </select>
+       </form>
+     </>
     )
   }
 
