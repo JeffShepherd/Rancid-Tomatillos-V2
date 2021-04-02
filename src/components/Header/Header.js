@@ -9,7 +9,12 @@ const Header = ({ returnToHomePage }) => {
         <img src='./assets/tomatillo.png' alt='tomatillo' />
         <p>Rancid Tomatillos</p>
       </div>
-      <Link to={`/`} className="home-button click">Home</Link>
+      <div>
+        <input placeholder='Search movies' type='text'/>
+        <button>submit</button>
+        <Link to={`/`} className="home-button click">Home</Link>
+      </div>
+
     </header>
   );
 };
