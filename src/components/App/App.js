@@ -14,30 +14,46 @@ class App extends Component {
 
     this.state = {
       movies: [],
+      moviesToFilter: [],
       selectedMovie: "",
-      error: ""
+      error: "",
+      resultsMessage: ""
     };
   }
 
   componentDidMount() {
+    this.getAllMovies();
+  }
+
+  getAllMovies = () => {
     fetch("http://rancid-tomatillos.herokuapp.com/api/v2/movies")
-      .then((response) => response.json())
-      .then((movies) => this.setState({ movies: scrubMovieData(movies.movies), error: "" }))
-      .catch((error) =>
-        this.setState({ error: "We're sorry, an error has occurred. Please try again later."})
-      );
+    .then((response) => response.json())
+    .then((movies) => this.setState({ movies: scrubMovieData(movies.movies), moviesToFilter: scrubMovieData(movies.movies), error: "" }))
+    .catch((error) =>
+      this.setState({ error: "We're sorry, an error has occurred. Please try again later."})
+    );
   }
 
   setSearchQuery = (searchValue) => {
-    const filteredMovies = this.state.movies.filter(movie => movie.title.toLowerCase().includes(searchValue))
-    this.setState({ movies: filteredMovies })
+    const filteredMovies = this.state.moviesToFilter.filter(movie => movie.title.toLowerCase().includes(searchValue))
+            
+    if (!filteredMovies.length) {
+      this.setState({ resultsMessage: `There are currently no results for: '${searchValue}'`});
+    } else {
+      this.setState({ movies: filteredMovies, resultsMessage: `Now searching by: '${searchValue}'` })
+    }
+  }
+
+  restoreHomePage = () => {
+    this.setState({ movies: this.state.moviesToFilter, resultsMessage: ''});
   }
 
   render() {
     return (
       <main>
-        <Header setSearchQuery={this.setSearchQuery} returnToHomePage={this.returnToHomePage} />
-        {this.state.error && <h2 className="error-message">⚠️ {this.state.error}</h2>}
+        <Header setSearchQuery={this.setSearchQuery} restoreHomePage={this.restoreHomePage} />
+        {this.state.error && <h2 className="message">⚠️ {this.state.error}</h2>}
+        {this.state.resultsMessage && <h2 className="message">{this.state.resultsMessage}</h2>}
         <Route exact path="/" render={() => <Movies showMovieDetails={this.showMovieDetails} movies={this.state.movies} />} />
 
         <Route exact path='/:movieID' render={({ match }) => {
