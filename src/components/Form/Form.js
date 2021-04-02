@@ -11,7 +11,7 @@ class Form extends Component {
     }
   }
 
-  handleChange(event) {
+  handleChange = (event) => {
     this.setState({ searchInput: event.target.value.toLowerCase() });
   }
 
@@ -28,7 +28,10 @@ class Form extends Component {
   render() {
     return (
       <form>
-        <input onChange={(event) => this.handleChange(event)} placeholder='Search movies' type='text'/>
+        <input 
+        onChange={(event) => this.handleChange(event)} 
+        placeholder='Search movies' type='text'
+        value={this.state.searchInput}/>
         <button onClick={(event) => this.submitSearch(event)}>submit</button>
       </form>
     )
