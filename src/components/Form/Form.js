@@ -30,9 +30,11 @@ class Form extends Component {
       <form>
         <input 
         onChange={(event) => this.handleChange(event)} 
-        placeholder='Search movies' type='text'
-        value={this.state.searchInput}/>
-        <button onClick={(event) => this.submitSearch(event)}>submit</button>
+        placeholder='Search movies by title' type='search'
+        value={this.state.searchInput}
+        required
+        />
+        <button className="search-button click" onClick={(event) => this.submitSearch(event)}>Search</button>
       </form>
     )
   }
