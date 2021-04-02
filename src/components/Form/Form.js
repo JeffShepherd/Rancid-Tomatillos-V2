@@ -34,7 +34,7 @@ class Form extends Component {
         value={this.state.searchInput}
         required
         />
-        <button className="search-button click" onClick={(event) => this.submitSearch(event)}>Search</button>
+        <button className="search-button click" onClick={(event) => this.submitSearch(event)}>🔍</button>
       </form>
     )
   }

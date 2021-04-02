@@ -10,7 +10,7 @@ const Header = ({ setSearchQuery, restoreHomePage }) => {
         <img src='./assets/tomatillo.png' alt='tomatillo' />
         <p>Rancid Tomatillos</p>
       </div>
-      <div>
+      <div className='header-right'>
         <Form setSearchQuery={setSearchQuery}/>
         <Link to={`/`} onClick={() => restoreHomePage()} className="home-button click">Home</Link>
       </div>

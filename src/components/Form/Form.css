@@ -1,3 +1,39 @@
+form {
+  width: 100%;
+  display: flex;
+}
+
+input {
+  width: 75%;
+  border-radius: 7px 0 0 7px;
+  padding: .25rem;
+}
+
+.search-button {
+  width: 25%;
+  background-color: rgba(0, 0, 0, 0);
+  border: .5px solid lightgrey;
+  border-radius: 0 7px 7px 0;
+
+}
+
+input,
+.search-button {
+  font-size: 1rem;
+}
+
 form:invalid > .search-button {
   pointer-events: none;
+}
+
+@media only screen and (min-width: 768px) {
+  input {
+    font-size: 1.35rem;
+  }
+}
+
+@media only screen and (min-width: 1050px) {
+  form {
+    width: 100%;
+  }
 }
