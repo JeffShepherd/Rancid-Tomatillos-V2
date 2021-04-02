@@ -3,7 +3,7 @@ import "./Header.css";
 import Form from "../Form/Form.js";
 import { Link } from 'react-router-dom'
 
-const Header = ({ setSearchQuery, returnToHomePage }) => {
+const Header = ({ setSearchQuery, restoreHomePage }) => {
   return (
     <header>
       <div className='logo-name'>
@@ -12,7 +12,7 @@ const Header = ({ setSearchQuery, returnToHomePage }) => {
       </div>
       <div>
         <Form setSearchQuery={setSearchQuery}/>
-        <Link to={`/`} className="home-button click">Home</Link>
+        <Link to={`/`} onClick={() => restoreHomePage()} className="home-button click">Home</Link>
       </div>
 
     </header>
