@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Header from "../Header/Header.js";
 import Movies from "../Movies/Movies.js";
 import MovieDetails from "../MovieDetails/MovieDetails.js";
-import { scrubMovieData } from "../src/utilities.js";
+import { scrubMovieData } from "../utilities.js";
 import { Route } from 'react-router-dom'
 import "./App.css";
 
