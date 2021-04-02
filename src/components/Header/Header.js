@@ -1,8 +1,9 @@
 import React from "react";
 import "./Header.css";
+import Form from "../Form/Form.js";
 import { Link } from 'react-router-dom'
 
-const Header = ({ returnToHomePage }) => {
+const Header = ({ setSearchQuery, returnToHomePage }) => {
   return (
     <header>
       <div className='logo-name'>
@@ -10,8 +11,7 @@ const Header = ({ returnToHomePage }) => {
         <p>Rancid Tomatillos</p>
       </div>
       <div>
-        <input placeholder='Search movies' type='text'/>
-        <button>submit</button>
+        <Form setSearchQuery={setSearchQuery}/>
         <Link to={`/`} className="home-button click">Home</Link>
       </div>
 

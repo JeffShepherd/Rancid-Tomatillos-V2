@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Header from "../Header/Header.js";
 import Movies from "../Movies/Movies.js";
 import MovieDetails from "../MovieDetails/MovieDetails.js";
+// import Form from "../Form/Form.js";
 import { scrubMovieData } from "../utilities.js";
 import { Route } from 'react-router-dom'
 import "./App.css";
@@ -27,12 +28,16 @@ class App extends Component {
       );
   }
 
+  setSearchQuery = (searchValue) => {
+    const filteredMovies = this.state.movies.filter(movie => movie.title.toLowerCase().includes(searchValue))
+    this.setState({ movies: filteredMovies })
+  }
+
   render() {
     return (
       <main>
-        <Header returnToHomePage={this.returnToHomePage} />
+        <Header setSearchQuery={this.setSearchQuery} returnToHomePage={this.returnToHomePage} />
         {this.state.error && <h2 className="error-message">⚠️ {this.state.error}</h2>}
-
         <Route exact path="/" render={() => <Movies showMovieDetails={this.showMovieDetails} movies={this.state.movies} />} />
 
         <Route exact path='/:movieID' render={({ match }) => {
