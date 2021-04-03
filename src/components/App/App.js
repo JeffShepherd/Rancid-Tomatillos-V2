@@ -41,6 +41,8 @@ class App extends Component {
     } else {
       this.setState({ movies: filteredMovies, resultsMessage: `Now searching by: '${searchValue}'` })
     }
+
+    this.resetSortValue();
   }
 
   handleSortTypes = (sortValue) => {
@@ -56,9 +58,13 @@ class App extends Component {
     }
   }
 
+  resetSortValue = () => {
+    document.getElementById('sortFormInput').value = '';
+  }
+
   restoreHomePage = () => {
     this.setState({ movies: [...this.state.moviesToFilter], resultsMessage: ''});
-    document.getElementById('sortFormInput').value = '';
+    this.resetSortValue();
   }
 
   render() {
