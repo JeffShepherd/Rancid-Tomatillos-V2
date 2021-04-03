@@ -3,6 +3,7 @@ import "./MovieDetails.css";
 import Description from "../Description/Description.js";
 import Image from "../Image/Image.js";
 import { scrubDetailsData } from "../utilities.js";
+import { testAPI } from "../api.js"
 
 
 class MovieDetails extends Component {
@@ -16,16 +17,7 @@ class MovieDetails extends Component {
   }
 
 componentDidMount() {
-  fetch(`http://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.props.id}`)
-    .then((response) => {
-      if (!response.ok) {
-        this.setState({
-          error: "Details for this movie are not available at this time. Please check back later."
-        });
-      } else {
-        return response.json();
-      }
-    })
+  testAPI(`movies/${this.props.id}`)
     .then((selectedMovie) =>
       this.setState({ selectedMovie: scrubDetailsData(selectedMovie.movie), error: "" })
     )

@@ -5,6 +5,7 @@ import MovieDetails from "../MovieDetails/MovieDetails.js";
 import { Route } from 'react-router-dom'
 import "./App.css";
 import { scrubMovieData } from "../utilities.js";
+import { testAPI } from "../api.js"
 
 
 class App extends Component {
@@ -24,8 +25,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch("http://rancid-tomatillos.herokuapp.com/api/v2/movies")
-    .then((response) => response.json())
+    testAPI('movies')
     .then((movies) => this.setState({ movies: scrubMovieData(movies.movies), moviesToFilter: scrubMovieData(movies.movies), error: "" }))
     .catch((error) =>
       this.setState({ error: "We're sorry, an error has occurred. Please try again later."})
