@@ -17,7 +17,7 @@ class MovieDetails extends Component {
   }
 
 componentDidMount() {
-  testAPI(this.props.id)
+  testAPI(`movies/${this.props.id}`)
   // fetch(`http://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.props.id}`)
     // .then((response) => {
     //   if (!response.ok) {
