@@ -11,7 +11,7 @@ describe('Rancid Tomatillos', () => {
     cy.get('a[id=337401]')
       .find('img')
       .should('have.attr', 'src')
-      .should('include', 'http://image.tmdb.org/t/p/original//aKx1ARwG55zZ0GpRvU2WrGrCG9o.jpg')
+      .should('include', 'https://image.tmdb.org/t/p/original//aKx1ARwG55zZ0GpRvU2WrGrCG9o.jpg')
     cy.get('a[id=337401]')
       .contains('Mulan')
     cy.get('a[id=337401]')
@@ -24,7 +24,7 @@ describe('Rancid Tomatillos', () => {
     cy.get('.image-container')
       .find('img')
       .should('have.attr', 'src')
-      .should('include','http://image.tmdb.org/t/p/original//zzWGRw277MNoCs3zhyG3YmYQsXv.jpg')
+      .should('include','https://image.tmdb.org/t/p/original//zzWGRw277MNoCs3zhyG3YmYQsXv.jpg')
     cy.contains('51%')
     cy.contains('When the Emperor')
     cy.contains('Action')
@@ -67,7 +67,7 @@ describe('App Sad Paths', () => {
     })
     
     cy.visit('http://localhost:3000/')
-    cy.get('h2[class=error-message]').should('contain', 'We\'re sorry, an error has occurred. Please try again later.')
+    cy.get('h2[class=message]').should('contain', 'We\'re sorry, an error has occurred. Please try again later.')
   });
 
   it('should reveal an error message when the server returns a 500 status code', () => {
@@ -80,7 +80,7 @@ describe('App Sad Paths', () => {
     })
 
     cy.visit('http://localhost:3000/')
-    cy.get('h2[class=error-message]').should('contain', 'We\'re sorry, an error has occurred. Please try again later.')
+    cy.get('h2[class=message]').should('contain', 'We\'re sorry, an error has occurred. Please try again later.')
   });
 
   it('should reveal an error message when the server returns a 404 status code', () => {
@@ -93,7 +93,7 @@ describe('App Sad Paths', () => {
     })
 
     cy.visit('http://localhost:3000/337401')
-    cy.get('h2[class=error-message]').should('contain', 'Details for this movie are not available at this time. Please check back later.')
+    cy.get('h2[class=message]').should('contain', 'Details for this movie are not available at this time. Please check back later.')
   });
 
   it('should reveal an error message when the server returns a 500 status code', () => {
@@ -106,6 +106,6 @@ describe('App Sad Paths', () => {
     })
 
     cy.visit('http://localhost:3000/337401')
-    cy.get('h2[class=error-message]').should('contain', 'Details for this movie are not available at this time. Please check back later.')
+    cy.get('h2[class=message]').should('contain', 'Details for this movie are not available at this time. Please check back later.')
   });
 })
