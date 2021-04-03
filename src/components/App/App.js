@@ -61,9 +61,7 @@ class App extends Component {
   }
 
   restoreHomePage = () => {
-    this.setState({ movies: this.state.moviesToFilter, resultsMessage: ''});
-    console.log('1:', this.state.movies)
-    console.log('2:', this.state.moviesToFilter)
+    this.setState({ movies: [...this.state.moviesToFilter], resultsMessage: ''});
   }
 
   render() {
