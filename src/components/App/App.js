@@ -5,9 +5,9 @@ import MovieDetails from "../MovieDetails/MovieDetails.js";
 import { Route } from 'react-router-dom'
 import "./App.css";
 import { 
-  scrubMovieData,
-  sortByAvgRating, 
-  sortByTitle
+  scrubMovieData
+  // sortByAvgRating, 
+  // sortByTitle
  } from "../utilities.js";
 
 
@@ -21,7 +21,10 @@ class App extends Component {
       selectedMovie: "",
       error: "",
       resultsMessage: "",
+      searchInput: "",
+      sortInput: ""
     };
+    this.setState = this.setState.bind(this)
   }
 
   componentDidMount() {
@@ -45,24 +48,24 @@ class App extends Component {
     this.resetSortValue();
   }
 
-  handleSortTypes = (sortValue) => {
-    if (!!this.state.movies.length) {
-      switch (sortValue) {
-        case 'Freshness':
-          this.setState({ movies: sortByAvgRating(this.state.movies), resultsMessage: `Now sorting by: '${sortValue}'` });
-          break;
-        case 'Title':
-          this.setState({ movies: sortByTitle(this.state.movies), resultsMessage: `Now sorting by: '${sortValue}'` });
-          break;
-        default:
-          break;
-      }
-    }
-  }
+  // handleSortTypes = (sortValue) => {
+  //   if (!!this.state.movies.length) {
+  //     switch (sortValue) {
+  //       case 'Freshness':
+  //         this.setState({ movies: sortByAvgRating(this.state.movies), resultsMessage: `Now sorting by: '${sortValue}'` });
+  //         break;
+  //       case 'Title':
+  //         this.setState({ movies: sortByTitle(this.state.movies), resultsMessage: `Now sorting by: '${sortValue}'` });
+  //         break;
+  //       default:
+  //         break;
+  //     }
+  //   }
+  // }
 
-  resetSortValue = () => {
-    document.getElementById('sortFormInput').value = '';
-  }
+  // resetSortValue = () => {
+  //   document.getElementById('sortFormInput').value = '';
+  // }
 
   restoreHomePage = () => {
     this.setState({ movies: [...this.state.moviesToFilter], resultsMessage: ''});
@@ -72,7 +75,7 @@ class App extends Component {
   render() {
     return (
       <main>
-        <Header handleSortTypes={this.handleSortTypes}filterBySearchValue={this.filterBySearchValue} restoreHomePage={this.restoreHomePage} />
+        <Header state={this.state} setState={this.setState} handleSortTypes={this.handleSortTypes} filterBySearchValue={this.filterBySearchValue} restoreHomePage={this.restoreHomePage} />
         {this.state.error && <h2 className="message">⚠️ {this.state.error}</h2>}
         {this.state.resultsMessage && <h2 className="message">{this.state.resultsMessage}</h2>}
         <Route exact path="/" render={() => <Movies showMovieDetails={this.showMovieDetails} movies={this.state.movies} />} />
