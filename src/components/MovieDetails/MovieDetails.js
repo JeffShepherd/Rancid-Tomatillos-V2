@@ -18,16 +18,6 @@ class MovieDetails extends Component {
 
 componentDidMount() {
   testAPI(`movies/${this.props.id}`)
-  // fetch(`http://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.props.id}`)
-    // .then((response) => {
-    //   if (!response.ok) {
-    //     this.setState({
-    //       error: "Details for this movie are not available at this time. Please check back later."
-    //     });
-    //   } else {
-    //     return response.json();
-    //   }
-    // })
     .then((selectedMovie) =>
       this.setState({ selectedMovie: scrubDetailsData(selectedMovie.movie), error: "" })
     )
