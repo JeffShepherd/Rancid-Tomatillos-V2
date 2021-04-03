@@ -20,12 +20,12 @@ class App extends Component {
       moviesToFilter: [],
       selectedMovie: "",
       error: "",
-      resultsMessage: ""
+      resultsMessage: "",
     };
   }
 
   componentDidMount() {
-    fetch("http://rancid-tomatillos.herokuapp.com/api/v2/movies")
+    fetch("https://rancid-tomatillos.herokuapp.com/api/v2/movies")
     .then((response) => response.json())
     .then((movies) => this.setState({ movies: scrubMovieData(movies.movies), moviesToFilter: scrubMovieData(movies.movies), error: "" }))
     .catch((error) =>
@@ -58,6 +58,7 @@ class App extends Component {
 
   restoreHomePage = () => {
     this.setState({ movies: [...this.state.moviesToFilter], resultsMessage: ''});
+    document.getElementById('sortFormInput').value = '';
   }
 
   render() {
