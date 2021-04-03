@@ -2,10 +2,9 @@ import React, { Component } from "react";
 import Header from "../Header/Header.js";
 import Movies from "../Movies/Movies.js";
 import MovieDetails from "../MovieDetails/MovieDetails.js";
-// import Form from "../Form/Form.js";
-import { scrubMovieData } from "../utilities.js";
 import { Route } from 'react-router-dom'
 import "./App.css";
+import { scrubMovieData } from "../utilities.js";
 
 
 class App extends Component {
@@ -17,16 +16,15 @@ class App extends Component {
       moviesToFilter: [],
       selectedMovie: "",
       error: "",
-      resultsMessage: ""
+      resultsMessage: "",
+      searchInput: "",
+      sortInput: ""
     };
+    this.setState = this.setState.bind(this)
   }
 
   componentDidMount() {
-    this.getAllMovies();
-  }
-
-  getAllMovies = () => {
-    fetch("http://rancid-tomatillos.herokuapp.com/api/v2/movies")
+    fetch("https://rancid-tomatillos.herokuapp.com/api/v2/movies")
     .then((response) => response.json())
     .then((movies) => this.setState({ movies: scrubMovieData(movies.movies), moviesToFilter: scrubMovieData(movies.movies), error: "" }))
     .catch((error) =>
@@ -34,27 +32,39 @@ class App extends Component {
     );
   }
 
-  setSearchQuery = (searchValue) => {
+  filterBySearchValue = (searchValue) => {
     const filteredMovies = this.state.moviesToFilter.filter(movie => movie.title.toLowerCase().includes(searchValue))
             
     if (!filteredMovies.length) {
-      this.setState({ resultsMessage: `There are currently no results for: '${searchValue}'`});
+      this.setState({ movies: [], resultsMessage: `There are currently no results for: '${searchValue}'`});
     } else {
       this.setState({ movies: filteredMovies, resultsMessage: `Now searching by: '${searchValue}'` })
     }
+
   }
 
+
   restoreHomePage = () => {
-    this.setState({ movies: this.state.moviesToFilter, resultsMessage: ''});
+    this.setState({ movies: [...this.state.moviesToFilter], resultsMessage: ''});
   }
 
   render() {
     return (
       <main>
-        <Header setSearchQuery={this.setSearchQuery} restoreHomePage={this.restoreHomePage} />
+        <Header 
+          state={this.state} 
+          setState={this.setState} 
+          filterBySearchValue={this.filterBySearchValue} 
+          restoreHomePage={this.restoreHomePage} 
+        />
         {this.state.error && <h2 className="message">⚠️ {this.state.error}</h2>}
         {this.state.resultsMessage && <h2 className="message">{this.state.resultsMessage}</h2>}
-        <Route exact path="/" render={() => <Movies showMovieDetails={this.showMovieDetails} movies={this.state.movies} />} />
+        <Route 
+          exact path="/" 
+          render={() => <Movies 
+            showMovieDetails={this.showMovieDetails} 
+            movies={this.state.movies} />}
+         />
 
         <Route exact path='/:movieID' render={({ match }) => {
             const { movieID } = match.params;

@@ -3,7 +3,12 @@ import "./Header.css";
 import Form from "../Form/Form.js";
 import { Link } from 'react-router-dom'
 
-const Header = ({ setSearchQuery, restoreHomePage }) => {
+const Header = ({ 
+  state, 
+  setState, 
+  filterBySearchValue, 
+  restoreHomePage
+  }) => {
   return (
     <header>
       <div className='logo-name'>
@@ -11,7 +16,11 @@ const Header = ({ setSearchQuery, restoreHomePage }) => {
         <p>Rancid Tomatillos</p>
       </div>
       <div className='header-right'>
-        <Form setSearchQuery={setSearchQuery}/>
+        <Form 
+          state={state} 
+          setState={setState} 
+          filterBySearchValue={filterBySearchValue}
+        />
         <Link to={`/`} onClick={() => restoreHomePage()} className="home-button click">Home</Link>
       </div>
 
