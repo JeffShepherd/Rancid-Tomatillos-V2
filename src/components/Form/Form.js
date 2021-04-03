@@ -18,7 +18,7 @@ class Form extends Component {
 
   submitSearch(event) {
     event.preventDefault();
-    this.props.setSearchQuery(this.state.searchInput)
+    this.props.filterBySearchValue(this.state.searchInput)
     this.clearInputs();
   }
 

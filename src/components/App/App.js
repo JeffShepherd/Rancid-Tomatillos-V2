@@ -33,7 +33,7 @@ class App extends Component {
     );
   }
 
-  setSearchQuery = (searchValue) => {
+  filterBySearchValue = (searchValue) => {
     const filteredMovies = this.state.moviesToFilter.filter(movie => movie.title.toLowerCase().includes(searchValue))
             
     if (!filteredMovies.length) {
@@ -64,7 +64,7 @@ class App extends Component {
   render() {
     return (
       <main>
-        <Header handleSortTypes={this.handleSortTypes}setSearchQuery={this.setSearchQuery} restoreHomePage={this.restoreHomePage} />
+        <Header handleSortTypes={this.handleSortTypes}filterBySearchValue={this.filterBySearchValue} restoreHomePage={this.restoreHomePage} />
         {this.state.error && <h2 className="message">⚠️ {this.state.error}</h2>}
         {this.state.resultsMessage && <h2 className="message">{this.state.resultsMessage}</h2>}
         <Route exact path="/" render={() => <Movies showMovieDetails={this.showMovieDetails} movies={this.state.movies} />} />
