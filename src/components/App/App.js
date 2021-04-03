@@ -37,7 +37,7 @@ class App extends Component {
     const filteredMovies = this.state.moviesToFilter.filter(movie => movie.title.toLowerCase().includes(searchValue))
             
     if (!filteredMovies.length) {
-      this.setState({ resultsMessage: `There are currently no results for: '${searchValue}'`});
+      this.setState({ movies: [], resultsMessage: `There are currently no results for: '${searchValue}'`});
     } else {
       this.setState({ movies: filteredMovies, resultsMessage: `Now searching by: '${searchValue}'` })
     }
@@ -46,15 +46,17 @@ class App extends Component {
   }
 
   handleSortTypes = (sortValue) => {
-    switch (sortValue) {
-      case 'Freshness':
-        this.setState({ movies: sortByAvgRating(this.state.movies), resultsMessage: `Now sorting by: '${sortValue}'` });
-        break;
-      case 'Title':
-        this.setState({ movies: sortByTitle(this.state.movies), resultsMessage: `Now sorting by: '${sortValue}'` });
-        break;
-      default:
-        break;
+    if (!!this.state.movies.length) {
+      switch (sortValue) {
+        case 'Freshness':
+          this.setState({ movies: sortByAvgRating(this.state.movies), resultsMessage: `Now sorting by: '${sortValue}'` });
+          break;
+        case 'Title':
+          this.setState({ movies: sortByTitle(this.state.movies), resultsMessage: `Now sorting by: '${sortValue}'` });
+          break;
+        default:
+          break;
+      }
     }
   }
 
