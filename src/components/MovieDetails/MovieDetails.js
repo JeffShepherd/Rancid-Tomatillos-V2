@@ -16,7 +16,7 @@ class MovieDetails extends Component {
   }
 
 componentDidMount() {
-  fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.props.id}`)
+  fetch(`http://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.props.id}`)
     .then((response) => {
       if (!response.ok) {
         this.setState({
@@ -38,7 +38,7 @@ componentDidMount() {
   render() {
     return (
       <>
-      {this.state.error && <h2 className="error-message">⚠️ {this.state.error}</h2>}
+      {this.state.error && <h2 className="message">⚠️ {this.state.error}</h2>}
       {this.state.selectedMovie && 
         <section className="details-view">
           <Image image={this.state.selectedMovie.backdrop_path} />

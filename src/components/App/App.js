@@ -24,7 +24,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch("https://rancid-tomatillos.herokuapp.com/api/v2/movies")
+    fetch("http://rancid-tomatillos.herokuapp.com/api/v2/movies")
     .then((response) => response.json())
     .then((movies) => this.setState({ movies: scrubMovieData(movies.movies), moviesToFilter: scrubMovieData(movies.movies), error: "" }))
     .catch((error) =>
