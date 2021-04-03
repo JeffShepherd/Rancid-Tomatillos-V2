@@ -4,11 +4,7 @@ import Movies from "../Movies/Movies.js";
 import MovieDetails from "../MovieDetails/MovieDetails.js";
 import { Route } from 'react-router-dom'
 import "./App.css";
-import { 
-  scrubMovieData
-  // sortByAvgRating, 
-  // sortByTitle
- } from "../utilities.js";
+import { scrubMovieData } from "../utilities.js";
 
 
 class App extends Component {
@@ -45,40 +41,30 @@ class App extends Component {
       this.setState({ movies: filteredMovies, resultsMessage: `Now searching by: '${searchValue}'` })
     }
 
-    this.resetSortValue();
   }
 
-  // handleSortTypes = (sortValue) => {
-  //   if (!!this.state.movies.length) {
-  //     switch (sortValue) {
-  //       case 'Freshness':
-  //         this.setState({ movies: sortByAvgRating(this.state.movies), resultsMessage: `Now sorting by: '${sortValue}'` });
-  //         break;
-  //       case 'Title':
-  //         this.setState({ movies: sortByTitle(this.state.movies), resultsMessage: `Now sorting by: '${sortValue}'` });
-  //         break;
-  //       default:
-  //         break;
-  //     }
-  //   }
-  // }
-
-  // resetSortValue = () => {
-  //   document.getElementById('sortFormInput').value = '';
-  // }
 
   restoreHomePage = () => {
     this.setState({ movies: [...this.state.moviesToFilter], resultsMessage: ''});
-    this.resetSortValue();
   }
 
   render() {
     return (
       <main>
-        <Header state={this.state} setState={this.setState} handleSortTypes={this.handleSortTypes} filterBySearchValue={this.filterBySearchValue} restoreHomePage={this.restoreHomePage} />
+        <Header 
+          state={this.state} 
+          setState={this.setState} 
+          filterBySearchValue={this.filterBySearchValue} 
+          restoreHomePage={this.restoreHomePage} 
+        />
         {this.state.error && <h2 className="message">⚠️ {this.state.error}</h2>}
         {this.state.resultsMessage && <h2 className="message">{this.state.resultsMessage}</h2>}
-        <Route exact path="/" render={() => <Movies showMovieDetails={this.showMovieDetails} movies={this.state.movies} />} />
+        <Route 
+          exact path="/" 
+          render={() => <Movies 
+            showMovieDetails={this.showMovieDetails} 
+            movies={this.state.movies} />}
+         />
 
         <Route exact path='/:movieID' render={({ match }) => {
             const { movieID } = match.params;
