@@ -11,10 +11,10 @@ const Header = ({
   }) => {
   return (
     <header>
-      <div className='logo-name'>
-        <img src='./assets/tomatillo.png' alt='tomatillo' />
-        <p>Rancid Tomatillos</p>
-      </div>
+      <Link to={`/`} onClick={() => restoreHomePage()} className="logo-name click">
+          <img src='./assets/tomatillo.png' alt='tomatillo' />
+          <p>Rancid Tomatillos</p>
+      </Link>
       <div className='header-right'>
         <Form 
           state={state} 
