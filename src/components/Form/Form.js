@@ -18,12 +18,6 @@ const Form = ({
   function submitSearch(event) {
     event.preventDefault();
     filterBySearchValue(state.searchInput)
-    clearInputs();
-  }
-
-  function clearInputs() {
-    setState({ searchInput: "" });
-    setState({ sortInput: "" });
   }
 
   function handleSort(event) {
@@ -62,7 +56,7 @@ const Form = ({
       </form>
       <form className="sort-form">
         <label htmlFor="sortFormInput">Sort by: </label>
-        <select onChange={(event) => handleSort(event)} id="sortFormInput" name="sort">
+        <select value={state.sortInput} onChange={(event) => handleSort(event)} id="sortFormInput" name="sort">
           <option value="" defaultValue></option>
           <option value="Freshness">Freshness</option>
           <option value="Title">Title</option>
