@@ -22,10 +22,6 @@ header {
   justify-content: space-between;
 }
 
-div > p {
-  font-family: "Architects Daughter", cursive;
-}
-
 .home-button {
   border: none;
   border-bottom: 1px solid white;
@@ -34,21 +30,22 @@ div > p {
   padding: 2px;
 }
 
+.logo-name {
+  display: flex;
+}
+
 .logo-name > img {
   height: 3vh;
   width: 3vh;
 }
 
-.logo-name {
-  display: flex;
-}
-
 .logo-name > p {
+  font-family: "Architects Daughter", cursive;
   margin: auto;
+  font-size: 3vh;
 }
 
 .home-button:hover {
-  /* color: #cccc99; */
   border: 1px solid white;
   border-radius: 3px;
   padding: 1px 1px 2px 1px;
@@ -72,6 +69,10 @@ div > p {
     width: 4vh;
   }
 
+  .logo-name > p {
+    font-size: inherit;
+  }
+
   .header-right {
     justify-content: space-around;
   }
@@ -93,5 +94,9 @@ div > p {
   .logo-name > img {
     height: 6vh;
     width: 6vh;
+  }
+
+  .logo-name > p {
+    font-size: inherit;
   }
 }
