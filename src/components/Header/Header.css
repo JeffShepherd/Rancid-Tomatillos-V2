@@ -32,6 +32,7 @@ header {
 
 .logo-name {
   display: flex;
+  color: white;
 }
 
 .logo-name > img {
