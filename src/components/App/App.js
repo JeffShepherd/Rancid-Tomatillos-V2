@@ -40,7 +40,7 @@ class App extends Component {
     } else {
       this.setState({ movies: filteredMovies, resultsMessage: `Now searching by: '${searchValue}'` })
     }
-
+    this.clearInputs()
   }
 
   clearInputs() {
