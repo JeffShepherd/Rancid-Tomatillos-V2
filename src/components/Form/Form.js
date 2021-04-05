@@ -1,5 +1,5 @@
 import React from "react";
-import { Route } from 'react-router-dom'
+import { Route, Link } from 'react-router-dom'
 import "./Form.css";
 import { 
   sortByAvgRating, 
@@ -18,7 +18,6 @@ const Form = ({
   }
 
   function submitSearch(event) {
-    event.preventDefault();
     filterBySearchValue(state.searchInput)
   }
 
@@ -57,7 +56,10 @@ const Form = ({
                     value={state.searchInput}
                     required
                   />
-                  <button className="search-button click" onClick={(event) => submitSearch(event)}>🔍</button>
+                  <Link to={`/`} 
+                    className="search-button click" 
+                    onClick={(event) => submitSearch(event)}>🔍
+                  </Link>
                 </form>
               )}
             }
