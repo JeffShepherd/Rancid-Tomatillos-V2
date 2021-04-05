@@ -19,7 +19,7 @@ class App extends Component {
       error: "",
       resultsMessage: "",
       searchInput: "",
-      sortInput: ""
+      sortInput: "",
     };
     this.setState = this.setState.bind(this)
   }
@@ -54,6 +54,10 @@ class App extends Component {
     this.clearInputs();
   }
 
+  clearOutMessage = () => {
+    this.setState({ error: "", resultsMessage: "" })
+  }
+
   render() {
     return (
       <main>
@@ -68,7 +72,9 @@ class App extends Component {
         <Route 
           exact path="/" 
           render={() => <Movies 
-            movies={this.state.movies} />}
+            movies={this.state.movies} 
+            clearOutMessage={this.clearOutMessage}
+            />}
          />
 
         <Route exact path='/:movieID' render={({ match }) => {

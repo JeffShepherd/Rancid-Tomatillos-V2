@@ -2,7 +2,7 @@ import React from "react";
 import Card from "../Card/Card.js";
 import "./Movies.css";
 
-const Movies = ({ movies }) => {
+const Movies = ({ movies, clearOutMessage }) => {
   const movieList = movies.map((movie) => {
     return (
       <Card
@@ -14,6 +14,7 @@ const Movies = ({ movies }) => {
         release_date={movie.release_date}
         overview={movie.overview}
         average_rating={movie.average_rating}
+        clearOutMessage={clearOutMessage}
       />
     );
   });
