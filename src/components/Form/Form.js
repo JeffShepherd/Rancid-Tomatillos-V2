@@ -1,9 +1,11 @@
 import React from "react";
+import { Route } from 'react-router-dom'
 import "./Form.css";
 import { 
   sortByAvgRating, 
   sortByTitle
  } from "../utilities.js";
+
 
 const Form = ({ 
   state, 
@@ -44,24 +46,37 @@ const Form = ({
     }
   }
     return (
-    <>
-      <form className="search-form">
-        <input 
-          onChange={(event) => handleChange(event)} 
-          placeholder='Search movies by title' type='search'
-          value={state.searchInput}
-          required
-        />
-        <button className="search-button click" onClick={(event) => submitSearch(event)}>🔍</button>
-      </form>
-      <form className="sort-form">
-        <label htmlFor="sortFormInput">Sort by: </label>
-        <select value={state.sortInput} onChange={(event) => handleSort(event)} id="sortFormInput" name="sort">
-          <option value="" defaultValue></option>
-          <option value="Freshness">Freshness</option>
-          <option value="Title">Title</option>
-        </select>
-      </form>
+      <>
+      <Route path="/"
+            render={() => {
+              return (
+                <form className="search-form">
+                  <input 
+                    onChange={(event) => handleChange(event)} 
+                    placeholder='Search movies by title' type='search'
+                    value={state.searchInput}
+                    required
+                  />
+                  <button className="search-button click" onClick={(event) => submitSearch(event)}>🔍</button>
+                </form>
+              )}
+            }
+          />
+
+      <Route exact path="/"
+            render={() => {
+              return (
+                <form className="sort-form">
+                  <label htmlFor="sortFormInput">Sort by: </label>
+                  <select value={state.sortInput} onChange={(event) => handleSort(event)} id="sortFormInput" name="sort">
+                    <option value="" defaultValue></option>
+                    <option value="Freshness">Freshness</option>
+                    <option value="Title">Title</option>
+                  </select>
+                </form>
+              )}
+            }
+          />
     </>
     )
 }
