@@ -43,9 +43,15 @@ class App extends Component {
 
   }
 
+  clearInputs() {
+    this.setState({ searchInput: "" });
+    this.setState({ sortInput: "" });
+  }
+
 
   restoreHomePage = () => {
     this.setState({ movies: [...this.state.moviesToFilter], resultsMessage: ''});
+    this.clearInputs();
   }
 
   render() {
