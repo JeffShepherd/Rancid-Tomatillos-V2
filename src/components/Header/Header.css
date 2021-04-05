@@ -22,14 +22,6 @@ header {
   justify-content: space-between;
 }
 
-.home-button {
-  border: none;
-  border-bottom: 1px solid white;
-  background-color: hsla(0, 0%, 0%, 0);
-  color: white;
-  padding: 2px;
-}
-
 .logo-name {
   display: flex;
   color: white;
@@ -46,12 +38,6 @@ header {
   font-size: 3vh;
 }
 
-.home-button:hover {
-  border: 1px solid white;
-  border-radius: 3px;
-  padding: 1px 1px 2px 1px;
-}
-
 @media only screen and (min-width: 768px) {
   header {
     font-size: 4vh;
@@ -59,10 +45,6 @@ header {
 
   .header-right {
     width: 30%;
-  }
-
-  .home-button {
-    font-size: 2vh;
   }
 
   .logo-name > img {

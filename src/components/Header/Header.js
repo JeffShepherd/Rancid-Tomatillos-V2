@@ -12,7 +12,6 @@ const Header = ({
   return (
     <header>
       <Link to={`/`} onClick={(event) => {
-        event.preventDefault() 
         restoreHomePage()}} 
         className="logo-name click">
           <img src='./assets/tomatillo.png' alt='tomatillo' />
@@ -24,7 +23,6 @@ const Header = ({
           setState={setState} 
           filterBySearchValue={filterBySearchValue}
         />
-        <Link to={`/`} onClick={() => restoreHomePage()} className="home-button click">Home</Link>
       </div>
 
     </header>
