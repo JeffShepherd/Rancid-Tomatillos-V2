@@ -14,6 +14,11 @@ const Description = (selectedMovie) => {
     tagline 
   } = selectedMovie;
 
+  const formatDollarAmount = (amount) => {
+    return (amount / 1000000).toFixed(2)
+  }
+  
+
   return (
     <article className="description">
       <div className="movie-header">
@@ -29,10 +34,10 @@ const Description = (selectedMovie) => {
       <p><span className="label">Released:</span> {releaseDate}</p>
       <p><span className="label">Runtime:</span>  {runtime} mins.</p>
       {budget > 0 &&
-        <p><span className="label">Budget:</span>  ${(budget / 1000000).toFixed(2)} m.</p>
+        <p><span className="label">Budget:</span>  ${formatDollarAmount(budget)} m.</p>
       }
       {revenue > 0 &&
-        <p><span className="label">Revenue:</span>  ${(revenue / 1000000).toFixed(2)} m.</p>
+        <p><span className="label">Revenue:</span>  ${formatDollarAmount(revenue)} m.</p>
       }
     </article>
   );
