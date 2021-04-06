@@ -10,7 +10,7 @@ const Card = ({ id, title, poster_path, average_rating, clearOutMessage}) => {
         id={id}
         onClick={() => clearOutMessage()}
       >
-        <img className="movie-image" src={poster_path} alt="movie poster" />
+        <img className="movie-image" src={poster_path} alt={`${title} movie poster`} />
         <h2 className="card-text">{title}</h2>
         <p className="card-text">Freshness: {Math.round((average_rating / 10) * 100)}%</p>
     </Link>
