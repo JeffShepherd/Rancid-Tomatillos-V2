@@ -6,8 +6,6 @@ export const scrubMovieData = (fullListData) => {
   )
 };
 
-
-
 export const scrubDetailsData = (movieDetails) => {
   const { poster_path, ...scrubbedMovie } = movieDetails;
   return scrubbedMovie;

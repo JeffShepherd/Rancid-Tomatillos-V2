@@ -17,7 +17,7 @@ const Form = ({
     setState({ searchInput: event.target.value.toLowerCase() });
   }
 
-  function submitSearch(event) {
+  function submitSearch() {
     filterBySearchValue(state.searchInput)
   }
 
