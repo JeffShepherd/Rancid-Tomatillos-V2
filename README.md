@@ -86,20 +86,18 @@ If you see `Compiled successfully!` in your terminal, the application is running
 #### Landing Page
 
 
-<img src="src/images/Screen Shot 2021-03-03 at 7.42.23 PM.png">
-
+<img src="">
 
 #### Movie Details
 
 
-<img src="src/images/Screen Shot 2021-03-03 at 7.42.23 PM.png">
-
+<img src="">
 
 
 #### Mobile View
 
 
-<img src="src/images/Screen Shot 2021-03-03 at 7.42.23 PM.png">
+<img src="">
 
 
 
@@ -110,6 +108,8 @@ If you see `Compiled successfully!` in your terminal, the application is running
 
 * New technologies! React, Router, and Cypress were new concepts to us before this project
 * Component architecture, and deciding which components should hold state
+* Running into a late issue with a user flow we never considered
+* Ensuring we prioritize our learning over adding more features to this application
 
 
 ---
@@ -119,6 +119,7 @@ If you see `Compiled successfully!` in your terminal, the application is running
 * Learning, and leveraging, multiple new technologies in a short amount of time
 * Utilizing new features of React Router to solve a challenging navigation issue
 * Optimizing performance of the aplication via architecture changes, API data scrubbing, and destructuring of objects
+* Ensuring we prioritize our learning over adding more features to this application
 
 
 ---
