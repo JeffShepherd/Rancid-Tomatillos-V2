@@ -11,7 +11,7 @@ const Header = ({
   }) => {
   return (
     <header>
-      <Link to={`/`} onClick={(event) => {
+      <Link to={`/`} onClick={() => {
         restoreHomePage()}} 
         className="logo-name home-button click">
           <img src='./assets/tomatillo.png' alt='tomatillo' />

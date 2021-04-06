@@ -6,8 +6,6 @@ export const scrubMovieData = (fullListData) => {
   )
 };
 
-
-
 export const scrubDetailsData = (movieDetails) => {
   const { poster_path, ...scrubbedMovie } = movieDetails;
   return scrubbedMovie;
@@ -26,3 +24,11 @@ export const sortByTitle = (data) => data.slice().sort((a,b) => {
   }
   return 0;
 });
+
+export const roundOutAvg = (rating) => {
+  return Math.round((rating / 10) * 100)
+}
+
+export const formatDollarAmount = (amount) => {
+  return (amount / 1000000).toFixed(2)
+}

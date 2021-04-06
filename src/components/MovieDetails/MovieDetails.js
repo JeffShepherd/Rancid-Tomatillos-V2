@@ -5,7 +5,6 @@ import Image from "../Image/Image.js";
 import { scrubDetailsData } from "../utilities.js";
 import { testAPI } from "../api.js"
 
-
 class MovieDetails extends Component {
   constructor() {
     super()
@@ -25,7 +24,6 @@ componentDidMount() {
       error: "Details for this movie are not available at this time. Please check back later."
     }));
 }
-
 
   render() {
     return (
@@ -50,7 +48,6 @@ componentDidMount() {
       }
     </>
     )
-
   };
 }
 

@@ -2,7 +2,13 @@ import React from "react";
 import "./Card.css";
 import { Link } from 'react-router-dom';
 
-const Card = ({ id, title, poster_path, average_rating, clearOutMessage}) => {
+const Card = ({ 
+  id, 
+  title, 
+  poster_path, 
+  average_rating, 
+  clearOutMessage
+}) => {
   return (
     <Link to={`/${id}`}
         className="movie-card click"

@@ -17,7 +17,7 @@ const Form = ({
     setState({ searchInput: event.target.value.toLowerCase() });
   }
 
-  function submitSearch(event) {
+  function submitSearch() {
     filterBySearchValue(state.searchInput)
   }
 
@@ -58,7 +58,7 @@ const Form = ({
                   />
                   <Link className="search-link" to={`/`}>
                     <button className="search-button" 
-                      onClick={(event) => submitSearch(event)}>Search
+                      onClick={(event) => submitSearch()}>Search
                     </button> 
                   </Link>
                 </form>

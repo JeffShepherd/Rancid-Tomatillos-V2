@@ -9,8 +9,6 @@
 
 @media only screen and (min-width: 1050px) {
   .image-container {
-    /* margin-right: 5%; */
-    /* position: relative; */
     object-fit: cover;
   }
 }
