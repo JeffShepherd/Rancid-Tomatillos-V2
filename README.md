@@ -17,13 +17,11 @@ A [Front-End Project](https://frontend.turing.io/projects/module-2/refactor-trac
 
 ## Overview
 
-***ADD MORE TO ME
-
 This project is definitely not Rotten Tomatoes. Nor is it Netflix. Nor is it IMDB. It’s R A N C I D T O M A T I L L O S. Very different!
 
-Rancid Tomatillos is is a [Turing School of Software and Design](https://turing.io/) Module 3 paired project. The purpose of this project is to create a dynamic application that leverages an API to receive, and display, movie data. A user can search and filter a long list of movies, in addition to viewing detailed information about a specific movie by clicking on it.
+Rancid Tomatillos is is a [Turing School of Software and Design](https://turing.io/) Module 3 paired project. The purpose of this project is to create a dynamic application that leverages an API to receive, and display, movie data. A user can search and filter a long list of movies, in addition to viewing detailed information about a specific movie by clicking on it. To create this application, we leveraged React, React Router, JavaScript, HTML, and CSS to create the front-end. As we worked, we used Cypress for test-driven development of our application.
 
-To create this application, we leveraged React, React Router, JavaScript, HTML, and CSS to create the front-end. As we worked, we used Cypress for test-driven development of our application.
+
 
 
 ## Planning Resources
