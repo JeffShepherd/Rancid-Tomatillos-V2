@@ -17,11 +17,14 @@ A [Front-End Project](https://frontend.turing.io/projects/module-2/refactor-trac
 
 ## Overview
 
-This is a [Turing School of Software and Design](https://turing.io/) - Module 3 paired project.
+***ADD MORE TO ME
 
-The purpose of this project was to get brown-field project experience: working on a project that has already been built out and refactoring/updating the project to make for a better user and dev experience with the app. The project we were given was FitLit, an app that tracks a user's activity, like steps, flights of stairs climbed, and miles walked in a week, as well as their hydration and sleep habits. The app also tracks a user's friends' activity, and offers a friendly competition that displays on the UI. 
+This project is definitely not Rotten Tomatoes. Nor is it Netflix. Nor is it IMDB. It’s R A N C I D T O M A T I L L O S. Very different!
 
-Our task was to redesign the layout, including the responsiveness of the app on various screen sizes, to make for a better UI, as well as refactor the code behind the scenes for better dev readability and empathy. At the same time, we removed all the hard-coded data, exchanged it for data fetched with an API, and implemented POST request functionality that subsequently updates the DOM. As we refactored the code, we followed TDD best practices to test each class's methods before hooking them up to the DOM. We also refactored the CSS to incorporate SASS files, mixins, and variables to DRY up this code and implemented a reset file so that our styling carries across multiple browsers.
+Rancid Tomatillos is is a [Turing School of Software and Design](https://turing.io/) Module 3 paired project. The purpose of this project is to create a dynamic application that leverages an API to receive, and display, movie data. A user can search and filter a long list of movies, in addition to viewing detailed information about a specific movie by clicking on it.
+
+To create this application, we leveraged React, React Router, JavaScript, HTML, and CSS to create the front-end. As we worked, we used Cypress for test-driven development of our application.
+
 
 ## Planning Resources
 
@@ -113,8 +116,9 @@ If you see `Compiled successfully!` in your terminal, the application is running
 ## Wins
 
 
-* Learning, and leveraging, multiple new technologies in a finite amount of time
-* 
+* Learning, and leveraging, multiple new technologies in a short amount of time
+* Utilizing new features of React Router to solve a challenging navigation issue
+* Optimizing performance of the aplication via architecture changes, API data scrubbing, and destructuring of objects
 
 
 ---
