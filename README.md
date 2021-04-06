@@ -83,10 +83,11 @@ If you see `Compiled successfully!` in your terminal, the application is running
 
 #### Landing Page
 
-![landing-page](./assets/details-page.png)
+![landing-page](./assets/landing-page.png)
 
 #### Movie Details
-![details-page](./assets/landing-page.png)
+
+![details-page](./assets/details-page.png)
 
 #### Mobile View
 ![mobile-landing page](./assets/mobile-landing-page.png)
