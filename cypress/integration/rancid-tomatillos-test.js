@@ -18,7 +18,6 @@ describe('Rancid Tomatillos', () => {
       .contains('51%')
   });
 
-  //each poster should have a unique alt tag
   it('each movie displayed should have a unique alt tag', () => {
     cy.get('a[id=337401]')
       .find('img')
@@ -67,7 +66,6 @@ describe('Rancid Tomatillos', () => {
       .url().should('eq', 'http://localhost:3000/')
   });
 
-  //user should be able to search by movie title
   it('should be able to filter movie cards by user input in search field from home view', () => {
     cy.get('input')
       .type('the')
@@ -78,7 +76,6 @@ describe('Rancid Tomatillos', () => {
       .first()
   });
 
-  //user should be able to search through the list of movies 
   it('should be able to filter movie cards by user input in search field from details view', () => {
     cy.get('a[id=337401]').click()
     
@@ -91,7 +88,6 @@ describe('Rancid Tomatillos', () => {
       .first()
   });
 
-  //user should be able to sort by Freshness in descending order
   it('should be able to sort movie cards by Freshness in descending order', () => {
     cy.get('select')
       .select('Freshness')
@@ -100,7 +96,6 @@ describe('Rancid Tomatillos', () => {
       .first()
   });
 
-  //user should be able to sort by Title in descending order
   it('should be able to sort movie cards by Title in descending order', () => {
     cy.get('select')
       .select('Title')
@@ -110,7 +105,6 @@ describe('Rancid Tomatillos', () => {
   });
 
 
-  //when a user selects a movie from the list of results, the center message should be hidden
   it('if a user selects a movie from the list of filtered or sorted results, the center message should be hidden', () => {
     cy.get('select')
       .select('Title')
