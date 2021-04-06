@@ -56,7 +56,7 @@ const Form = ({
                     value={state.searchInput}
                     required
                   />
-                  <Link to={`/`}>
+                  <Link className="search-link" to={`/`}>
                     <button className="search-button" 
                       onClick={(event) => submitSearch(event)}>Search
                     </button> 
