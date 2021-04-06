@@ -120,7 +120,7 @@ describe('App Sad Paths', () => {
   it('should reveal an error message when the server returns a 404 status code', () => {
     cy.intercept({
       method: 'GET',
-      url: 'http://rancid-tomatillos.herokuapp.com/api/v2/movies'
+      url: 'https://rancid-tomatillos.herokuapp.com/api/v2/movies'
     },
     {
       statusCode: 404
@@ -133,7 +133,7 @@ describe('App Sad Paths', () => {
   it('should reveal an error message when the server returns a 500 status code', () => {
     cy.intercept({
       method: 'GET',
-      url: 'http://rancid-tomatillos.herokuapp.com/api/v2/movies'
+      url: 'https://rancid-tomatillos.herokuapp.com/api/v2/movies'
     },
     {
       statusCode: 500
@@ -146,7 +146,7 @@ describe('App Sad Paths', () => {
   it('should reveal an error message when the server returns a 404 status code', () => {
     cy.intercept({
       method: 'GET',
-      url: 'http://rancid-tomatillos.herokuapp.com/api/v2/movies/337401'
+      url: 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/337401'
     },
     {
       statusCode: 404
@@ -159,7 +159,7 @@ describe('App Sad Paths', () => {
   it('should reveal an error message when the server returns a 500 status code', () => {
     cy.intercept({
       method: 'GET',
-      url: 'http://rancid-tomatillos.herokuapp.com/api/v2/movies/337401'
+      url: 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/337401'
     },
     {
       statusCode: 500
