@@ -26,7 +26,7 @@ Our task was to redesign the layout, including the responsiveness of the app on 
 ## Planning Resources
 
 * [GitHub Project Board](https://github.com/JeffShepherd/Rancid-Tomatillos/projects/1)
-* [Miro Board - Class Structure Outline](https://miro.com/app/board/o9J_lNxtxTk=/)
+* [Miro Board - Wireframes and Component Structure](https://miro.com/app/board/o9J_lNxtxTk=/)
 
 
 ## Setup Instructions
@@ -70,30 +70,30 @@ If you see `Compiled successfully!` in your terminal, the application is running
 * <img alt="Git" src="https://img.shields.io/badge/git%20-%23F05033.svg?&style=for-the-badge&logo=git&logoColor=white"/>
 * <img alt="HTML5" src="https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white"/>
 * <img alt="CSS3" src="https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white"/>
-* Cypress
+* <img alt="Cypress" src=“https://img.shields.io/badge/cypress%20-%23404d59.svg?&style=for-the-badge&logo=Cypress&logoColor=white”/>
 
 ---
 ## Features
 
 
-## Application Demo
+#### Application Demo
 
 
 
-## Landing Page
+#### Landing Page
 
 
 <img src="src/images/Screen Shot 2021-03-03 at 7.42.23 PM.png">
 
 
-## Movie Details
+#### Movie Details
 
 
 ![](https://media.giphy.com/dia/khbZidy9qRf0e6CqGJ/giphy.gif)
 
 
 
-## Post Requests
+#### Mobile View
 
 
 ![](https://media.giphy.com/media/3N4gXexFyH37d611/giphy.gif)
