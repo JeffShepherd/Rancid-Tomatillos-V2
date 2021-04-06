@@ -1,6 +1,6 @@
 # Rancid Tomatillos
 
-A [Front-End Project](https://frontend.turing.io/projects/module-2/refactor-tractor.html) by [Jeff Shepherd](https://github.com/JeffShepherd) and [Reggie Thompson](https://github.com/rdtho2525).
+A [Front-End Project](https://frontend.turing.io/projects/module-2/refactor-tractor.html) by [Jeff Shepherd](https://github.com/JeffShepherd) and [Reggie Thompson](https://github.com/rdtho2525). Original project specifications can be found [here](https://frontend.turing.io/projects/module-3/rancid-tomatillos-v3.html).
 
 
 
@@ -17,7 +17,7 @@ A [Front-End Project](https://frontend.turing.io/projects/module-2/refactor-trac
 
 ## Overview
 
-This is a Turing School of Software and Design - Module 3 paired project.
+This is a [Turing School of Software and Design](https://turing.io/) - Module 3 paired project.
 
 The purpose of this project was to get brown-field project experience: working on a project that has already been built out and refactoring/updating the project to make for a better user and dev experience with the app. The project we were given was FitLit, an app that tracks a user's activity, like steps, flights of stairs climbed, and miles walked in a week, as well as their hydration and sleep habits. The app also tracks a user's friends' activity, and offers a friendly competition that displays on the UI. 
 
@@ -70,7 +70,7 @@ If you see `Compiled successfully!` in your terminal, the application is running
 * <img alt="Git" src="https://img.shields.io/badge/git%20-%23F05033.svg?&style=for-the-badge&logo=git&logoColor=white"/>
 * <img alt="HTML5" src="https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white"/>
 * <img alt="CSS3" src="https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white"/>
-* <img alt="Cypress" src=“https://img.shields.io/badge/cypress%20-%23404d59.svg?&style=for-the-badge&logo=Cypress&logoColor=white”/>
+* <img alt="Cypress" src='https://img.shields.io/badge/cypress%20-%23404d59.svg?&style=for-the-badge&logo=Cypress&logoColor=white'/>
 
 ---
 ## Features
@@ -78,7 +78,7 @@ If you see `Compiled successfully!` in your terminal, the application is running
 
 #### Application Demo
 
-
+![](https://media.giphy.com/dia/khbZidy9qRf0e6CqGJ/giphy.gif)
 
 #### Landing Page
 
@@ -89,14 +89,14 @@ If you see `Compiled successfully!` in your terminal, the application is running
 #### Movie Details
 
 
-![](https://media.giphy.com/dia/khbZidy9qRf0e6CqGJ/giphy.gif)
+<img src="src/images/Screen Shot 2021-03-03 at 7.42.23 PM.png">
 
 
 
 #### Mobile View
 
 
-![](https://media.giphy.com/media/3N4gXexFyH37d611/giphy.gif)
+<img src="src/images/Screen Shot 2021-03-03 at 7.42.23 PM.png">
 
 
 
@@ -113,10 +113,9 @@ If you see `Compiled successfully!` in your terminal, the application is running
 ## Wins
 
 
-* Great organization - we got through everything!
-* Getting a better understand of the fetch API
-* Leveraging complex methods needed for extensions
-* Practicing array iterator methods
+* Learning, and leveraging, multiple new technologies in a finite amount of time
+* 
+
 
 ---
 ## Future Iterations
