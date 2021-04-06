@@ -6,13 +6,13 @@ A [Front-End Project](https://frontend.turing.io/projects/module-2/refactor-trac
 
 1. [Overview](#overview)
 2. [Planning Resources](#planning-resources)
-3. [Set Up](#set-up)
+3. [Set Up](#setup-instructions)
 4. [Learning Goals](#learning-goals)
 5. [Technologies](#technologies)
 6. [Features](#features)
 7. [Challenges](#challenges)
 8. [Wins](#wins)
-9. [Future Additions](#future-additions)
+9. [Future Additions](#future-iterations)
 
 
 ## Overview
@@ -29,7 +29,7 @@ Our task was to redesign the layout, including the responsiveness of the app on 
 * [Miro Board - Class Structure Outline](https://miro.com/app/board/o9J_lNxtxTk=/)
 
 
-## Set Up Instructions
+## Setup Instructions
 
 
 Clone down this repository to your local machine:
@@ -64,22 +64,20 @@ If you see `Compiled successfully!` in your terminal, the application is running
 
 ## Technologies
 
-* JavaScript
-* React
-* React Router
+* <img alt="React" src="https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB"/>
+* <img alt="JavaScript" src="https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/>
+* <img alt="NodeJS" src="https://img.shields.io/badge/node.js%20-%2343853D.svg?&style=for-the-badge&logo=node.js&logoColor=white"/>
+* <img alt="Git" src="https://img.shields.io/badge/git%20-%23F05033.svg?&style=for-the-badge&logo=git&logoColor=white"/>
+* <img alt="HTML5" src="https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white"/>
+* <img alt="CSS3" src="https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white"/>
 * Cypress
-* Git
-* GitHub
-* HTML
-* CSS
-* Fetch API
 
 ---
 ## Features
 
-+ [Landing Page](#landing-page)
-+ [Mobile Views](#mobile-views)
-+ [Post Requests](#post-requests)
+
+## Application Demo
+
 
 
 ## Landing Page
@@ -88,17 +86,17 @@ If you see `Compiled successfully!` in your terminal, the application is running
 <img src="src/images/Screen Shot 2021-03-03 at 7.42.23 PM.png">
 
 
-## Mobile Views
+## Movie Details
 
 
-![](https://media.giphy.com/media/khbZidy9qRf0e6CqGJ/giphy.gif)
+![](https://media.giphy.com/dia/khbZidy9qRf0e6CqGJ/giphy.gif)
 
 
 
 ## Post Requests
 
 
-![](https://media.giphy.com/media/3N4gXjnexFyH37d611/giphy.gif)
+![](https://media.giphy.com/media/3N4gXexFyH37d611/giphy.gif)
 
 
 
@@ -107,10 +105,9 @@ If you see `Compiled successfully!` in your terminal, the application is running
 ---
 ## Challenges
 
-* Inexperience working with brown-field projects
-* Deciding where to start on the project
-* Leveraging multiple new technologies that we learned during the project
-* Refactoring complex methods
+* New technologies! React, Router, and Cypress were new concepts to us before this project
+* Component architecture, and deciding which components should hold state
+
 
 ---
 ## Wins
@@ -124,8 +121,8 @@ If you see `Compiled successfully!` in your terminal, the application is running
 ---
 ## Future Iterations
 
-* Methods were left in each class that we thought had a sound practical purpose, but were not represented on the DOM. These would be great to display in further iterations.
-* Implementing icons or buttons to hide or display information when a user clicks on them.
+* Deploy and use [our own Express app](https://github.com/JeffShepherd/movie-API/tree/main) for the endpoints holding the data we fetch.
+* Refactor the application, and our API, to allow a user to favorite a movie, and view their favorites at a later date.
 
 
 
