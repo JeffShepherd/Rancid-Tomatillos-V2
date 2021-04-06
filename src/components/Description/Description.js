@@ -1,5 +1,6 @@
 import React from "react";
 import "./Description.css";
+import { roundOutAvg, formatDollarAmount } from '../utilities.js'
 
 const Description = (selectedMovie) => {
   const { 
@@ -14,18 +15,13 @@ const Description = (selectedMovie) => {
     tagline 
   } = selectedMovie;
 
-  const formatDollarAmount = (amount) => {
-    return (amount / 1000000).toFixed(2)
-  }
-  
-
   return (
     <article className="description">
       <div className="movie-header">
         <h2 className="movie-title">{title}</h2>
         <aside><em>{tagline}</em></aside>
       </div>
-      <p><span className="label">Freshness:</span> {Math.round((averageRating / 10) * 100)}%</p>
+      <p><span className="label">Freshness:</span> {roundOutAvg(averageRating)}%</p>
       <div className="">
         <p className="label">Overview:</p>
         <p>{overview}</p>
