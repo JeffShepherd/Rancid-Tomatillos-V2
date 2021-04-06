@@ -79,7 +79,7 @@ If you see `Compiled successfully!` in your terminal, the application is running
 
 #### Application Demo
 
-![demo-vid](./assets/demo-video.mov)
+![demo-vid](./assets/rancidgif.gif)
 
 #### Landing Page
 
