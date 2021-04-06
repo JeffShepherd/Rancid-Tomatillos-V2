@@ -79,25 +79,17 @@ If you see `Compiled successfully!` in your terminal, the application is running
 
 #### Application Demo
 
-![](https://media.giphy.com/dia/khbZidy9qRf0e6CqGJ/giphy.gif)
+![demo-vid](./assets/demo-video.mov)
 
 #### Landing Page
 
-
-<img src="">
+![landing-page](./assets/details-page.png)
 
 #### Movie Details
-
-
-<img src="">
-
+![details-page](./assets/landing-page.png)
 
 #### Mobile View
-
-
-<img src="">
-
-
+![mobile-landing page](./assets/mobile-landing-page.png)
 
 
 
