@@ -16,8 +16,20 @@ describe('Rancid Tomatillos', () => {
       .contains('Mulan')
     cy.get('a[id=337401]')
       .contains('51%')
-  })
+  });
 
+  //each poster should have a unique alt tag
+  it('each movie displayed should have a unique alt tag', () => {
+    cy.get('a[id=337401]')
+      .find('img')
+      .should('have.attr', 'alt')
+      .should('include', 'Mulan')
+
+    cy.get('a[id=718444]')
+    .find('img')
+    .should('have.attr', 'alt')
+    .should('include', 'Rogue')
+  });
 
   it('should reveal a selected movie\'s details when clicked', () => {
     cy.get('a[id=337401]').click()
@@ -54,7 +66,61 @@ describe('Rancid Tomatillos', () => {
       .go('forward')
       .url().should('eq', 'http://localhost:3000/')
   });
+
+  //user should be able to search by movie title
+  it('should be able to filter movie cards by user input in search field from home view', () => {
+    cy.get('input')
+      .type('the')
+    
+    cy.get('a[class=search-link]').click()
+
+    cy.get('a[id=659986]')
+      .first()
+  });
+
+  //user should be able to search through the list of movies 
+  it('should be able to filter movie cards by user input in search field from details view', () => {
+    cy.get('a[id=337401]').click()
+    
+    cy.get('input')
+      .type('the')
+    
+    cy.get('a[class=search-link]').click()
+
+    cy.get('a[id=659986]')
+      .first()
+  });
+
+  //user should be able to sort by Freshness in descending order
+  it('should be able to sort movie cards by Freshness in descending order', () => {
+    cy.get('select')
+      .select('Freshness')
+
+    cy.get('a[id=726739]')
+      .first()
+  });
+
+  //user should be able to sort by Title in descending order
+  it('should be able to sort movie cards by Title in descending order', () => {
+    cy.get('select')
+      .select('Title')
+
+    cy.get('a[id=528085]')
+      .first()
+  });
+
+
+  //when a user selects a movie from the list of results, the center message should be hidden
+  it('if a user selects a movie from the list of filtered or sorted results, the center message should be hidden', () => {
+    cy.get('select')
+      .select('Title')
+
+    cy.get('a[id=528085]')
+      .click()
+      .get('h2[class=message]').should('not.exist')
+  });
 })
+
 
 describe('App Sad Paths', () => {
   it('should reveal an error message when the server returns a 404 status code', () => {
