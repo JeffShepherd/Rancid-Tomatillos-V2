@@ -19,7 +19,7 @@ class App extends Component {
       error: "",
       resultsMessage: "",
       searchInput: "",
-      sortInput: ""
+      sortInput: "",
     };
     this.setState = this.setState.bind(this)
   }
@@ -40,7 +40,7 @@ class App extends Component {
     } else {
       this.setState({ movies: filteredMovies, resultsMessage: `Now searching by: '${searchValue}'` })
     }
-
+    this.clearInputs()
   }
 
   clearInputs() {
@@ -52,6 +52,10 @@ class App extends Component {
   restoreHomePage = () => {
     this.setState({ movies: [...this.state.moviesToFilter], resultsMessage: ''});
     this.clearInputs();
+  }
+
+  clearOutMessage = () => {
+    this.setState({ error: "", resultsMessage: "" })
   }
 
   render() {
@@ -68,8 +72,9 @@ class App extends Component {
         <Route 
           exact path="/" 
           render={() => <Movies 
-            showMovieDetails={this.showMovieDetails} 
-            movies={this.state.movies} />}
+            movies={this.state.movies} 
+            clearOutMessage={this.clearOutMessage}
+            />}
          />
 
         <Route exact path='/:movieID' render={({ match }) => {
