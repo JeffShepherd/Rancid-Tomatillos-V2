@@ -1,6 +1,6 @@
 # Rancid Tomatillos
 
-A [Front-End Project](https://frontend.turing.io/projects/module-2/refactor-tractor.html) by [Jeff Shepherd](https://github.com/JeffShepherd) and [Reggie Thompson](https://github.com/rdtho2525). Original project specifications can be found [here](https://frontend.turing.io/projects/module-3/rancid-tomatillos-v3.html).
+A [Front-End Project](https://frontend.turing.io/projects/module-3/rancid-tomatillos-v3.html) by [Jeff Shepherd](https://github.com/JeffShepherd) and [Reggie Thompson](https://github.com/rdtho2525).
 
 [Check out the deployed application](https://rancid---tomatillos.herokuapp.com/)
 
