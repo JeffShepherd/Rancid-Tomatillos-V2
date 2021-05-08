@@ -122,3 +122,4 @@ If you see `Compiled successfully!` in your terminal, the application is running
 * Add a link to the details page to display the movie trailer in a modal element.
 
 test
+test 2
