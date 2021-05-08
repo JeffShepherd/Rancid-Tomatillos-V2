@@ -120,3 +120,5 @@ If you see `Compiled successfully!` in your terminal, the application is running
 * Refactor the application, and our API, to allow a user to favorite a movie, and view their favorites at a later date.
 * Refactor `Form` to render two separate components: `Sort` and `Search`.
 * Add a link to the details page to display the movie trailer in a modal element.
+
+test
