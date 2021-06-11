@@ -12,10 +12,11 @@ describe('Rancid Tomatillos', () => {
       .find('img')
       .should('have.attr', 'src')
       .should('include', 'https://image.tmdb.org/t/p/original//aKx1ARwG55zZ0GpRvU2WrGrCG9o.jpg')
+    
     cy.get('a[id=337401]')
-      .contains('Mulan')
-    cy.get('a[id=337401]')
-      .contains('51%')
+      .click();
+    cy.contains('Mulan')
+    cy.contains('53%')
   });
 
   it('each movie displayed should have a unique alt tag', () => {
@@ -25,18 +26,18 @@ describe('Rancid Tomatillos', () => {
       .should('include', 'Mulan')
 
     cy.get('a[id=718444]')
-    .find('img')
-    .should('have.attr', 'alt')
-    .should('include', 'Rogue')
+      .find('img')
+      .should('have.attr', 'alt')
+      .should('include', 'Rogue')
   });
 
-  it('should reveal a selected movie\'s details when clicked', () => {
+  it.only('should reveal a selected movie\'s details when clicked', () => {
     cy.get('a[id=337401]').click()
     cy.get('.image-container')
       .find('img')
       .should('have.attr', 'src')
       .should('include','https://image.tmdb.org/t/p/original//zzWGRw277MNoCs3zhyG3YmYQsXv.jpg')
-    cy.contains('51%')
+    cy.contains('53%')
     cy.contains('When the Emperor')
     cy.contains('Action')
     cy.contains('2020-09-04')
