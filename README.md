@@ -1,5 +1,9 @@
-# Rancid Tomatillos
+# Rancid Tomatillos V2
 
+This project is an effort to practice refactoring. The original project was completing while I was just learning React.
+
+The old project ReadMe is listed below for reference, and will be removed upon completion of the refactoring.
+====================
 A [Front-End Project](https://frontend.turing.io/projects/module-3/rancid-tomatillos-v3.html) by [Jeff Shepherd](https://github.com/JeffShepherd) and [Reggie Thompson](https://github.com/rdtho2525).
 
 [Check out the deployed application](https://rancid---tomatillos.herokuapp.com/)
