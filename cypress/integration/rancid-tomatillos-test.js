@@ -16,7 +16,7 @@ describe('Rancid Tomatillos', () => {
     cy.get('a[id=337401]')
       .click();
     cy.contains('Mulan')
-    cy.contains('53%')
+    cy.contains('51%')
   });
 
   it('each movie displayed should have a unique alt tag', () => {
@@ -31,13 +31,13 @@ describe('Rancid Tomatillos', () => {
       .should('include', 'Rogue')
   });
 
-  it.only('should reveal a selected movie\'s details when clicked', () => {
+  it('should reveal a selected movie\'s details when clicked', () => {
     cy.get('a[id=337401]').click()
     cy.get('.image-container')
       .find('img')
       .should('have.attr', 'src')
       .should('include','https://image.tmdb.org/t/p/original//zzWGRw277MNoCs3zhyG3YmYQsXv.jpg')
-    cy.contains('53%')
+    cy.contains('51%')
     cy.contains('When the Emperor')
     cy.contains('Action')
     cy.contains('2020-09-04')
