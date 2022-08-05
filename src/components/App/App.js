@@ -4,7 +4,7 @@ import Movies from "../Movies/Movies.js";
 import MovieDetails from "../MovieDetails/MovieDetails.js";
 import { Route } from 'react-router-dom'
 import "./App.css";
-import { scrubMovieData } from "../utilities.js";
+import { scrubMovieData } from "../../utilities.js";
 import { testAPI } from "../../api.js"
 
 
