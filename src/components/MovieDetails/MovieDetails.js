@@ -3,7 +3,7 @@ import "./MovieDetails.css";
 import Description from "../Description/Description.js";
 import Image from "../Image/Image.js";
 import { scrubDetailsData } from "../utilities.js";
-import { testAPI } from "../api.js"
+import { testAPI } from "../../api.js"
 
 class MovieDetails extends Component {
   constructor() {
