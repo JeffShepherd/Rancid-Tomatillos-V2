@@ -4,7 +4,7 @@ import "./Form.css";
 import { 
   sortByAvgRating, 
   sortByTitle
- } from "../utilities.js";
+ } from "../../utilities.js";
 
 
 const Form = ({ 

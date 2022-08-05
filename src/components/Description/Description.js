@@ -1,6 +1,6 @@
 import React from "react";
 import "./Description.css";
-import { roundOutAvg, formatDollarAmount } from '../utilities.js'
+import { roundOutAvg, formatDollarAmount } from '../../utilities.js'
 
 const Description = (selectedMovie) => {
   const { 
